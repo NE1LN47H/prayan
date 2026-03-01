@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route } from 'react-router-dom';
 import { Hero } from './components/Hero';
 import { ParallaxHero } from './components/ParallaxHero';
@@ -71,7 +71,13 @@ export default function App() {
             {isLoading ? (
               <LoadingScreen key="loader" />
             ) : (
-              <div key="content" className="relative">
+              <motion.div
+                key="content"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+                className="relative"
+              >
                 <Navbar />
                 <CustomCursor />
                 <ParallaxHero />
@@ -96,7 +102,7 @@ export default function App() {
                     <Footer />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             )}
           </AnimatePresence>
         </main>
