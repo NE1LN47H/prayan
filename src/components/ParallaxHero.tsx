@@ -5,9 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const LAYERS = [
-    { id: 1, src: 'https://f.top4top.io/p_3712yxjrk0.png', yPercent: 70 },
-    { id: 2, src: 'https://d.top4top.io/p_3712tiwfg0.png', yPercent: 55 },
-    { id: 4, src: 'https://c.top4top.io/p_37122bes20.png', yPercent: 80 },
+    { id: 1, src: '/assets/background1.png', yPercent: 70 },
+    { id: 2, src: '/assets/background2.png', yPercent: 55 },
+    { id: 4, src: '/assets/background3.png', yPercent: 80 },
 ];
 
 export const ParallaxHero = () => {
