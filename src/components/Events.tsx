@@ -141,12 +141,12 @@ export const Events = () => {
   ];
 
   return (
-    <section ref={containerRef} id="events" className="py-32 px-6 bg-black/50">
-      <div className="max-w-7xl mx-auto space-y-32">
+    <section ref={containerRef} id="events" className="py-20 md:py-32 px-6 bg-black/50">
+      <div className="max-w-7xl mx-auto space-y-20 md:space-y-32">
         {/* Tech Events */}
-        <div className="space-y-16">
-          <div className="section-title flex items-end justify-between border-b border-white/10 pb-8">
-            <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter">
+        <div className="space-y-12 md:space-y-16">
+          <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
               TECH <span className="text-neon-red">ARENA</span>
             </h2>
             <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Innovation & Excellence</p>
@@ -162,9 +162,9 @@ export const Events = () => {
         </div>
 
         {/* Cultural Events */}
-        <div className="space-y-16">
-          <div className="section-title flex items-end justify-between border-b border-white/10 pb-8">
-            <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter">
+        <div className="space-y-12 md:space-y-16">
+          <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
               CULTURAL <span className="text-neon-purple">VIBE</span>
             </h2>
             <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Art & Expression</p>
@@ -178,6 +178,46 @@ export const Events = () => {
             ))}
           </div>
         </div>
+        {/* VKCET Venue */}
+        <div id="venue" className="space-y-12 md:space-y-16">
+          <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
+              VENUE
+            </h2>
+            <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">VKCET · Parippally, Kerala</p>
+          </div>
+
+          <div className="glass rounded-3xl overflow-hidden border border-white/10 group hover:border-neon-red/40 transition-colors duration-500">
+            <div className="relative w-full h-[320px] sm:h-[420px] md:h-[500px]">
+              <iframe
+                title="VKCET Location"
+                src="https://www.google.com/maps?q=Valia+Koonambaikulathamma+College+of+Engineering+and+Technology+Parippally+Kerala&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) saturate(0.8)' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              {/* Overlay bar */}
+              <div className="absolute bottom-0 inset-x-0 px-6 py-4 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-between">
+                <div>
+                  <p className="text-white font-display font-bold text-lg tracking-widest uppercase">VKCET</p>
+                  <p className="text-white/50 text-xs tracking-widest uppercase">Parippally · Kollam · Kerala</p>
+                </div>
+                <a
+                  href="https://maps.app.goo.gl/T8Q5yUtPRJRgpAKb9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs px-4 py-2 rounded-full border border-neon-red/60 text-neon-red hover:bg-neon-red hover:text-black transition-all duration-300 tracking-widest uppercase"
+                >
+                  Open in Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

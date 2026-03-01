@@ -35,10 +35,10 @@ export const About = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id="about" className="py-32 px-6 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+    <section ref={containerRef} id="about" className="py-20 md:py-32 px-6 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div className="about-text space-y-8">
-          <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
             THE <span className="text-neon-red">LEGACY</span> <br />
             CONTINUES
           </h2>
@@ -68,14 +68,13 @@ export const About = () => {
         <div className="relative">
           <div className="about-card glass p-8 rounded-3xl relative z-10">
             <img
-              src="https://picsum.photos/seed/tech/800/600"
-              alt="Tech Fest"
+              src="/assets/vkcet.jpeg"
+              alt="VKCET Campus"
               className="rounded-2xl grayscale hover:grayscale-0 transition-all duration-700"
-              referrerPolicy="no-referrer"
             />
             <div className="mt-6">
-              <h3 className="text-2xl font-display font-bold">Innovation Hub</h3>
-              <p className="text-white/50 mt-2">Witness the future of technology through our curated workshops and competitions.</p>
+              <h3 className="text-2xl font-display font-bold">VKCET</h3>
+              <p className="text-white/50 mt-2">Valia Koonambaikulathamma College of Engineering & Technology</p>
             </div>
           </div>
 

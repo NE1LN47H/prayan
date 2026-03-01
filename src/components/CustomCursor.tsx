@@ -37,7 +37,7 @@ export const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full bg-neon-red/20 border border-neon-red/50 pointer-events-none z-[9999] mix-blend-screen"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full bg-neon-red/20 border border-neon-red/50 pointer-events-none z-[9999] mix-blend-screen hidden lg:block"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
@@ -46,7 +46,7 @@ export const CustomCursor = () => {
         transition={{ type: 'spring', damping: 20, stiffness: 250, mass: 0.5 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-neon-red pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-neon-red pointer-events-none z-[9999] hidden lg:block"
         animate={{
           x: mousePosition.x - 3,
           y: mousePosition.y - 3,

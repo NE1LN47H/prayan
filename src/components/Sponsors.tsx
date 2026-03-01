@@ -33,11 +33,11 @@ export const Sponsors = () => {
   ];
 
   return (
-    <section ref={containerRef} id="sponsors" className="py-32 px-6">
-      <div className="max-w-7xl mx-auto space-y-20">
+    <section ref={containerRef} id="sponsors" className="py-20 md:py-32 px-6">
+      <div className="max-w-7xl mx-auto space-y-16 md:space-y-20">
         <div className="text-center space-y-4">
-          <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter">
-            OUR <span className="text-neon-red">PARTNERS</span>
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
+            OUR <span className="text-neon-red">SPONSORS</span>
           </h2>
           <p className="text-white/40 uppercase tracking-widest text-sm">Empowering the Vision</p>
         </div>
@@ -96,9 +96,20 @@ export const Footer = () => {
           <div className="space-y-6">
             <h4 className="font-display font-bold text-xl">Quick Links</h4>
             <ul className="space-y-4 text-white/50">
-              {['Home', 'About', 'Events', 'Timeline', 'Register'].map((item) => (
+              {['Home', 'About', 'Events', 'Timeline', 'Register', 'Credits'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="hover:text-neon-red transition-colors">{item}</a>
+                  <a
+                    href={item === 'Credits' ? '#credits' : `#${item.toLowerCase()}`}
+                    className="hover:text-neon-red transition-colors"
+                    onClick={(e) => {
+                      if (item === 'Credits') {
+                        e.preventDefault();
+                        window.dispatchEvent(new CustomEvent('open-credits'));
+                      }
+                    }}
+                  >
+                    {item}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -123,7 +134,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6 text-white/30 text-sm">
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm">
           <p>© 2026 PRAYAN VKCET. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

@@ -49,9 +49,9 @@ export const Timeline = () => {
   ];
 
   return (
-    <section ref={containerRef} id="timeline" className="h-screen overflow-hidden bg-black relative">
-      <div className="absolute top-20 left-6 z-20">
-        <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter">
+    <section ref={containerRef} id="timeline" className="h-screen overflow-hidden relative">
+      <div className="absolute top-10 md:top-20 left-6 z-20">
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
           EVENT <span className="text-neon-red">TIMELINE</span>
         </h2>
       </div>
