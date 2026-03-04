@@ -56,7 +56,7 @@ export default function HotShotsRegistrationPage() {
                             className="text-[11px] tracking-[0.5em] uppercase text-neon-red/70 font-mono"
                             style={{ fontFamily: "'Orbitron', sans-serif" }}
                         >
-                            Cultural Events · Photography
+                            Cultural Events · Reels Competition
                         </span>
                     </div>
 
@@ -68,7 +68,7 @@ export default function HotShotsRegistrationPage() {
                     </h1>
 
                     <p className="text-white/40 text-sm tracking-widest uppercase max-w-md mx-auto">
-                        Unleash your creativity and capture the perfect moment in our premier challenge
+                        Unleash your creativity and capture the perfect moment in our reels competition
                     </p>
 
                     {/* Coordinators Highlight */}
@@ -84,7 +84,8 @@ export default function HotShotsRegistrationPage() {
                                 <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
                                     <span className="text-white text-lg font-display font-bold tracking-tight">Tanish</span>
                                     <a
-                                        href="wa.me/+918086591470"
+                                        target="_blank"
+                                        href="https://wa.me/+918086591470"
                                         className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
                                     >
                                         Contact
@@ -98,7 +99,8 @@ export default function HotShotsRegistrationPage() {
                                 <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
                                     <span className="text-white text-lg font-display font-bold tracking-tight">Keerthana</span>
                                     <a
-                                        href="wa.me/+918136811493"
+                                        target='_blank'
+                                        href="https://wa.me/+918136811493"
                                         className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
                                     >
                                         Contact

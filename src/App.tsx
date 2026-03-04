@@ -16,6 +16,7 @@ import { Navbar } from './components/Navbar';
 import CreditsPage from './pages/CreditsPage';
 import LayamRegistrationPage from './pages/LayamRegistrationPage';
 import HotShotsRegistrationPage from './pages/HotShotsRegistrationPage';
+import PhotographyRegistrationPage from './pages/PhotographyRegistrationPage';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -67,6 +68,7 @@ export default function App() {
       <Route path="/credits" element={<CreditsPage />} />
       <Route path="/register/layam" element={<LayamRegistrationPage />} />
       <Route path="/register/hot-shots" element={<HotShotsRegistrationPage />} />
+      <Route path="/register/photography" element={<PhotographyRegistrationPage />} />
 
       {/* Main site */}
       <Route path="*" element={

@@ -81,10 +81,16 @@ export const Events = () => {
     },
     {
       title: 'HOT SHOTS',
-      description: 'Unleash your creativity and capture the perfect moment in our premier photography challenge.',
+      description: 'Unleash your creativity and capture the perfect moment in our premier reels challenge.',
       color: 'red',
       image: '/posters/hotshots.jpeg',
       registerLink: '/register/hot-shots',
+    },
+    {
+      title: 'PHOTOGRAPHY',
+      description: 'Capture the essence of the moment in our premier photography challenge.',
+      color: 'red',
+      registerLink: '/register/photography',
     },
   ];
 

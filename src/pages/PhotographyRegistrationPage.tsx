@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ShieldAlert } from 'lucide-react';
+import { ArrowLeft, Camera, ShieldAlert } from 'lucide-react';
 
-export default function LayamRegistrationPage() {
+export default function PhotographyRegistrationPage() {
     return (
         <div className="relative min-h-screen bg-black text-white overflow-hidden flex flex-col">
 
@@ -39,7 +39,7 @@ export default function LayamRegistrationPage() {
             </motion.header>
 
             {/* Main content */}
-            <div className="relative z-10 flex-1 flex flex-col items-center px-4 py-12 md:py-16">
+            <div className="relative z-10 flex-1 flex flex-col items-center px-4 py-8 md:py-16">
 
                 {/* Title block */}
                 <motion.div
@@ -49,11 +49,14 @@ export default function LayamRegistrationPage() {
                     className="text-center mb-10 space-y-4"
                 >
                     <div className="flex items-center justify-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-neon-red/10 flex items-center justify-center text-neon-red">
+                            <Camera size={20} />
+                        </div>
                         <span
-                            className="text-[11px] tracking-[0.5em] uppercase text-neon-red font-bold font-mono"
+                            className="text-[11px] tracking-[0.5em] uppercase text-neon-red/70 font-mono"
                             style={{ fontFamily: "'Orbitron', sans-serif" }}
                         >
-                            Cultural Vibe · Registration
+                            Cultural Events · Photography
                         </span>
                     </div>
 
@@ -61,16 +64,17 @@ export default function LayamRegistrationPage() {
                         className="text-4xl sm:text-7xl md:text-8xl font-display font-bold tracking-tighter uppercase"
                         style={{ fontFamily: "'TronAres','Orbitron', sans-serif", textShadow: '0 0 40px rgba(255,0,60,0.2)' }}
                     >
-                        LAYAM
+                        PHOTOGRAPHY
                     </h1>
 
                     <p className="text-white/40 text-sm tracking-widest uppercase max-w-md mx-auto">
-                        Showcase your rhythm and energy in the most anticipated dance competition of the year
+                        Capture the essence of the moment in our premier photography challenge
                     </p>
+
                     {/* Coordinators Highlight */}
                     <div className="pt-8 pb-4 flex flex-col items-center gap-6">
                         <div className="flex flex-col items-center">
-                            <span className="text-neon-red text-[10px] uppercase tracking-[0.4em] font-bold opacity-80 mb-2">LAYAM'26 COORDINATORS</span>
+                            <span className="text-neon-red text-[10px] uppercase tracking-[0.4em] font-bold opacity-80 mb-2">COORDINATORS</span>
                             <div className="h-px w-24 bg-gradient-to-r from-transparent via-neon-red/40 to-transparent" />
                         </div>
 
@@ -78,10 +82,12 @@ export default function LayamRegistrationPage() {
                             {/* Coordinator 1 */}
                             <div className="flex flex-col items-center gap-3 group">
                                 <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
-                                    <span className="text-white text-lg font-display font-bold tracking-tight">Midhun MB</span>
+                                    <span className="text-white text-lg font-display font-bold tracking-tight">Abhijith Kumar</span>
                                     <a
-                                        href="https://wa.me/+919495249272"
-                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
+                                        href="https://wa.me/+919746642101"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300 no-underline"
                                     >
                                         Contact
                                     </a>
@@ -92,10 +98,12 @@ export default function LayamRegistrationPage() {
                             {/* Coordinator 2 */}
                             <div className="flex flex-col items-center gap-3 group">
                                 <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
-                                    <span className="text-white text-lg font-display font-bold tracking-tight">Kavya L</span>
+                                    <span className="text-white text-lg font-display font-bold tracking-tight">Sreehari</span>
                                     <a
-                                        href="https://wa.me/+919747776684"
-                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
+                                        href="https://wa.me/+916238514126"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300 no-underline"
                                     >
                                         Contact
                                     </a>
@@ -113,7 +121,7 @@ export default function LayamRegistrationPage() {
                     </div>
                 </motion.div>
 
-                {/* Form container */}
+                {/* Info container */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -126,50 +134,16 @@ export default function LayamRegistrationPage() {
                         {/* Top accent line */}
                         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-neon-red to-transparent" />
 
-                        {/* Corner brackets */}
-                        <span className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-neon-red/60 z-10" />
-                        <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-neon-red/60 z-10" />
-                        <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-neon-red/60 z-10" />
-                        <span className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-neon-red/60 z-10" />
-
-                        {/* Status bar */}
-                        <div className="flex items-center justify-between px-6 py-3 border-b border-white/5">
-                            <span className="text-[9px] font-mono text-white/20 uppercase tracking-[0.3em]">Registration Portal</span>
-                            <span className="flex items-center gap-1.5 text-[9px] font-mono text-neon-red/60 uppercase tracking-widest">
-                                <span className="w-1.5 h-1.5 rounded-full bg-neon-red animate-pulse inline-block" />
-                                Open
-                            </span>
-                        </div>
-
-                        {/* Registration Button Section */}
-                        <div className="px-8 py-20 flex flex-col items-center justify-center gap-8 relative overflow-hidden text-center">
-                            {/* Animated Background Glow for Button - Smoother falloff */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-red/[0.08] blur-[120px] rounded-full animate-pulse" />
-
-                            <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSewxLMJWBLqsrPscMDJctzQ_8lJr6wnjGqzOHv5H7n30OAP6A/viewform"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group relative px-12 py-6 rounded-2xl text-white no-underline transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden border border-neon-red/30 shadow-[0_0_40px_rgba(255,0,60,0.15)]"
-                                style={{
-                                    background: 'rgba(255, 0, 60, 0.05)',
-                                    backdropFilter: 'blur(20px)',
-                                    boxShadow: 'inset 0 0 20px rgba(255, 0, 60, 0.1)'
-                                }}
-                            >
-                                {/* Shine Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-
-                                <div className="relative flex flex-col items-center">
-                                    <span className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-[0.15em] sm:tracking-[0.2em] uppercase text-white drop-shadow-[0_0_15px_rgba(255,0,60,0.6)]" style={{ fontFamily: "'Orbitron', sans-serif" }}>
-                                        Registration
-                                    </span>
-                                    <span className="text-[10px] sm:text-[11px] tracking-[0.4em] sm:tracking-[0.6em] text-neon-red font-bold uppercase opacity-80 mt-2">Open Official Portal</span>
-                                </div>
-                            </a>
-
-                            <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] max-w-sm leading-relaxed font-mono">
-                                External Gateway Access · Secure Redirect
+                        {/* Info Section */}
+                        <div className="px-6 py-12 sm:px-8 sm:py-16 flex flex-col items-center justify-center gap-6 relative overflow-hidden text-center">
+                            <div className="w-16 h-16 rounded-2xl bg-neon-red/10 flex items-center justify-center text-neon-red mb-2">
+                                <Camera size={32} />
+                            </div>
+                            <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-white uppercase" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                                Direct Contact for Registration
+                            </h3>
+                            <p className="text-white/40 text-sm tracking-widest uppercase max-w-sm mx-auto leading-relaxed">
+                                Contact the coordinators for registration and theme details.
                             </p>
                         </div>
 
@@ -180,6 +154,7 @@ export default function LayamRegistrationPage() {
                         </div>
                     </div>
                 </motion.div>
+
                 {/* Rules & Regulations container */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -187,7 +162,7 @@ export default function LayamRegistrationPage() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="w-full max-w-2xl mt-12 mb-20"
                 >
-                    <div className="relative rounded-2xl overflow-hidden border border-white/8 p-8 md:p-12"
+                    <div className="relative rounded-2xl overflow-hidden border border-white/8 p-6 sm:p-12"
                         style={{ background: 'rgba(10,10,10,0.6)', backdropFilter: 'blur(20px)' }}>
 
                         {/* Top accent line */}
@@ -197,19 +172,21 @@ export default function LayamRegistrationPage() {
                             <div className="w-10 h-10 rounded-xl bg-neon-red/10 flex items-center justify-center text-neon-red">
                                 <ShieldAlert size={20} />
                             </div>
-                            <h2 className="text-2xl font-display font-bold tracking-wider uppercase text-white">Rules & Regulations</h2>
+                            <h2 className="text-2xl font-display font-bold tracking-wider uppercase text-white">Competition Guidelines</h2>
                         </div>
 
                         <ul className="space-y-6">
                             {[
-                                "Participants must report to the venue at least 30 minutes before the scheduled time.",
-                                "Individual and group performances have specific time limits that must be strictly followed.",
-                                "All required music/audio tracks must be submitted in high-quality MP3 format.",
-                                "The decision of the judges will be final and binding for all events.",
-                                "Decent costumes and behavior are mandatory; any form of vulgarity will lead to immediate disqualification."
+                                "Entries must be original works of the participant captured within the last 12 months.",
+                                "Basic editing is allowed, but composite images or AI-generated content will be disqualified.",
+                                "Submit your entries in high-resolution JPEG/PNG format via WhatsApp to the coordinators.",
+                                "Each participant can submit up to 3 entries across different themes.",
+                                "The decision of the expert panel will be final and binding for the competition.",
+                                "The themes will be provided by the coordinators upon contact.",
+                                "A minimum of engagement metrics may be required for qualification in certain categories."
                             ].map((rule, idx) => (
                                 <li key={idx} className="flex gap-3 sm:gap-4 group">
-                                    <span className="text-neon-red font-mono text-[10px] sm:text-xs mt-1 opacity-50 font-bold">0{idx + 1}</span>
+                                    <span className="text-neon-red font-mono text-[15px] sm:text-xs mt-1 opacity-50 font-bold">0{idx + 1}</span>
                                     <p className="text-white/60 text-xs sm:text-sm leading-relaxed tracking-wide group-hover:text-white/80 transition-colors">
                                         {rule}
                                     </p>
@@ -218,7 +195,7 @@ export default function LayamRegistrationPage() {
                         </ul>
 
                         {/* Decor elements */}
-                        <div className="absolute top-4 right-4 text-[8px] font-mono text-white/5 uppercase tracking-[0.4em]">Protocol Version 6.0.4</div>
+                        <div className="absolute top-4 right-4 text-[8px] font-mono text-white/5 uppercase tracking-[0.4em]">Optics Protocol v4.1.0</div>
                     </div>
                 </motion.div>
             </div>
@@ -231,7 +208,7 @@ export default function LayamRegistrationPage() {
                 className="relative z-10 text-center py-6 border-t border-white/5"
             >
                 <p className="text-[9px] font-mono text-white/10 uppercase tracking-[0.4em]">
-                    Prayan '26 · VKCET · Cultural Vibe
+                    Prayan '26 · VKCET · Cultural Events
                 </p>
             </motion.div>
         </div>
