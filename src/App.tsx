@@ -15,6 +15,7 @@ import { BackgroundBeams } from './components/BackgroundBeams';
 import { Navbar } from './components/Navbar';
 import CreditsPage from './pages/CreditsPage';
 import LayamRegistrationPage from './pages/LayamRegistrationPage';
+import HotShotsRegistrationPage from './pages/HotShotsRegistrationPage';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -65,6 +66,7 @@ export default function App() {
       {/* /credits is a fully standalone page — no loading screen, no Lenis */}
       <Route path="/credits" element={<CreditsPage />} />
       <Route path="/register/layam" element={<LayamRegistrationPage />} />
+      <Route path="/register/hot-shots" element={<HotShotsRegistrationPage />} />
 
       {/* Main site */}
       <Route path="*" element={

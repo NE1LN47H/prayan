@@ -167,7 +167,10 @@ export const Hero = () => {
               <div className="beam-line beam-top absolute top-1/2 left-0 right-0 h-[1.5px] bg-neon-red shadow-[0_0_10px_#ff003c] z-30 scale-x-0" />
               <div className="beam-line beam-bot absolute top-1/2 left-0 right-0 h-[1.5px] bg-neon-red shadow-[0_0_10px_#ff003c] z-30 scale-x-0" />
 
-              <h1 className="ares-text glass-text-3d relative text-4xl sm:text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase leading-none whitespace-nowrap overflow-hidden">
+              <h1
+                className="ares-text glass-text-3d relative text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none whitespace-nowrap overflow-hidden"
+                style={{ fontFamily: "'TronAres', 'Orbitron', sans-serif" }}
+              >
                 PRAYAN<span className="text-neon-red drop-shadow-[0_0_15px_rgba(255,0,60,0.4)]">'26</span>
               </h1>
               <div className="laser-scan absolute top-0 bottom-0 left-0 w-[2px] bg-white shadow-[0_0_15px_#fff,0_0_30px_#ff003c] z-30 opacity-0" />
@@ -178,13 +181,7 @@ export const Hero = () => {
         {/* ── Tron Countdown ── */}
         <div className="hero-countdown opacity-0 mt-6 flex flex-col items-center gap-3 pointer-events-none">
           {/* Top rule */}
-          <div className="flex items-center gap-3 w-full max-w-xs">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-neon-red/60" />
-            <span className="text-neon-red/60 text-[12px] tracking-[0.4em] uppercase" style={{ fontFamily: "'Orbitron',sans-serif", fontWeight: 'bold' }}>
-              ENTER THE GRID
-            </span>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-neon-red/60" />
-          </div>
+          <div className="flex items-center gap-3 w-full max-w-xs h-px bg-gradient-to-r from-transparent via-neon-red/60 to-transparent" />
 
           {/* Digits row */}
           <div className="flex items-center gap-1">
