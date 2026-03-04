@@ -149,7 +149,7 @@ export default function LayamRegistrationPage() {
                         <div className="px-2 py-4">
                             <FormfacadeEmbed
                                 formFacadeURL="https://formfacade.com/include/102361209278677182588/form/1FAIpQLSewxLMJWBLqsrPscMDJctzQ_8lJr6wnjGqzOHv5H7n30OAP6A/classic.js/?div=ff-compose"
-                                onSubmitForm={() => console.log('LAYAM registration submitted')}
+                                onSubmitForm={() => { }}
                             />
                         </div>
 

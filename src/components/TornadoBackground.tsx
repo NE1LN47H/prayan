@@ -31,7 +31,7 @@ export const TornadoBackground = () => {
             perlinTexture.wrapT = THREE.RepeatWrapping;
 
             // TSL functions
-            const toRadialUv = Fn(([uvNode, multiplier, rotation, offset]) => {
+            const toRadialUv = Fn(([uvNode, multiplier, rotation, offset]: [any, any, any, any]) => {
                 const centeredUv = uvNode.sub(0.5).toVar();
                 const distanceToCenter = centeredUv.length();
                 const angle = atan(centeredUv.y, centeredUv.x);
@@ -42,14 +42,14 @@ export const TornadoBackground = () => {
                 return radialUv;
             });
 
-            const toSkewedUv = Fn(([uvNode, skew]) => {
+            const toSkewedUv = Fn(([uvNode, skew]: [any, any]) => {
                 return vec2(
                     uvNode.x.add(uvNode.y.mul(skew.x)),
                     uvNode.y.add(uvNode.x.mul(skew.y))
                 );
             });
 
-            const twistedCylinder = Fn(([position, parabolStrength, parabolOffset, parabolAmplitude, timeNode]) => {
+            const twistedCylinder = Fn(([position, parabolStrength, parabolOffset, parabolAmplitude, timeNode]: [any, any, any, any, any]) => {
                 const angle = atan(position.z, position.x).toVar();
                 const elevation = position.y;
 

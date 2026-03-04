@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
-// @ts-ignore
-import GLOBE from 'vanta/dist/vanta.globe.min';
+declare const GLOBE: any;
+import 'vanta/dist/vanta.globe.min';
 
 export const VantaGlobe = () => {
     const [vantaEffect, setVantaEffect] = useState<any>(null);

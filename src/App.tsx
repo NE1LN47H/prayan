@@ -29,13 +29,13 @@ export default function App() {
     }, 2500);
 
     const lenis = new Lenis({
-      duration: 2.0,
+      duration: 1.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.8,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 1.8,
       infinite: false,
     });
 

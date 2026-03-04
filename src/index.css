@@ -18,6 +18,10 @@
   --color-neon-red: #ff003c;
   --color-neon-purple: #bc13fe;
   --color-neon-blue: #0066ff;
+  
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 @layer base {

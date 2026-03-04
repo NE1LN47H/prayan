@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Cpu, Music, Zap, Trophy, Users, Star } from 'lucide-react';
 import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import { cn } from '@/src/lib/utils';
+import { Reveal } from './Reveal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -248,12 +249,14 @@ export const Events = () => {
       <div className="max-w-7xl mx-auto space-y-20 md:space-y-32">
         {/* Tech Events */}
         <div className="space-y-12 md:space-y-16">
-          <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
-              TECH <span className="text-neon-red">EVENTS</span>
-            </h2>
-            <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Innovation & Excellence</p>
-          </div>
+          <Reveal>
+            <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
+                TECH <span className="text-neon-red">EVENTS</span>
+              </h2>
+              <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Innovation & Excellence</p>
+            </div>
+          </Reveal>
 
           <SwipeCardsContainer events={allEvents} />
         </div>

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Reveal } from './Reveal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,19 +39,25 @@ export const About = () => {
     <section ref={containerRef} id="about" className="py-20 md:py-32 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div className="about-text space-y-8">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
-            THE <span className="text-neon-red">LEGACY</span> <br />
-            CONTINUES
-          </h2>
+          <Reveal>
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
+              THE <span className="text-neon-red">LEGACY</span> <br />
+              CONTINUES
+            </h2>
+          </Reveal>
           <div className="space-y-6 text-lg text-white/60 leading-relaxed max-w-xl">
-            <p>
-              PRAYAN'26 is the flagship techno-cultural festival of Valia Koonambaikulam College of Engineering and Technology (VKCET).
-              A convergence of innovation, creativity, and cultural excellence.
-            </p>
-            <p>
-              From high-octane technical challenges to soul-stirring cultural performances,
-              PRAYAN is where the brightest minds and most talented artists from across the nation unite.
-            </p>
+            <Reveal delay={0.4}>
+              <p>
+                PRAYAN'26 is the flagship techno-cultural festival of Valia Koonambaikulam College of Engineering and Technology (VKCET).
+                A convergence of innovation, creativity, and cultural excellence.
+              </p>
+            </Reveal>
+            <Reveal delay={0.6}>
+              <p>
+                From high-octane technical challenges to soul-stirring cultural performances,
+                PRAYAN is where the brightest minds and most talented artists from across the nation unite.
+              </p>
+            </Reveal>
           </div>
 
         </div>

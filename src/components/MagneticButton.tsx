@@ -36,7 +36,7 @@ export const MagneticButton = ({ children, className, onClick }: MagneticButtonP
     >
       <motion.button
         animate={{ x: position.x, y: position.y }}
-        transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
+        transition={{ type: 'spring', stiffness: 120, damping: 20, mass: 0.1 }}
         onClick={onClick}
         className={cn(
           "px-8 py-3 rounded-full font-medium transition-all duration-300",
