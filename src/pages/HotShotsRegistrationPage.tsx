@@ -12,8 +12,8 @@ export default function HotShotsRegistrationPage() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
             </div>
 
-            {/* Purple glow top - Subtler for better rendering */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-neon-purple/[0.03] blur-[150px] pointer-events-none" />
+            {/* Red glow top - Subtler for better rendering */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-neon-red/[0.03] blur-[150px] pointer-events-none" />
 
             {/* Header */}
             <motion.header
@@ -49,11 +49,11 @@ export default function HotShotsRegistrationPage() {
                     className="text-center mb-10 space-y-4"
                 >
                     <div className="flex items-center justify-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-neon-purple/10 flex items-center justify-center text-neon-purple">
+                        <div className="w-10 h-10 rounded-xl bg-neon-red/10 flex items-center justify-center text-neon-red">
                             <Camera size={20} />
                         </div>
                         <span
-                            className="text-[11px] tracking-[0.5em] uppercase text-neon-purple/70 font-mono"
+                            className="text-[11px] tracking-[0.5em] uppercase text-neon-red/70 font-mono"
                             style={{ fontFamily: "'Orbitron', sans-serif" }}
                         >
                             Cultural Events · Photography
@@ -62,7 +62,7 @@ export default function HotShotsRegistrationPage() {
 
                     <h1
                         className="text-4xl sm:text-7xl md:text-8xl font-display font-bold tracking-tighter uppercase"
-                        style={{ fontFamily: "'TronAres','Orbitron', sans-serif", textShadow: '0 0 40px rgba(188,19,254,0.2)' }}
+                        style={{ fontFamily: "'TronAres','Orbitron', sans-serif", textShadow: '0 0 40px rgba(255,0,60,0.2)' }}
                     >
                         HOT SHOTS
                     </h1>
@@ -74,18 +74,18 @@ export default function HotShotsRegistrationPage() {
                     {/* Coordinators Highlight */}
                     <div className="pt-8 pb-4 flex flex-col items-center gap-6">
                         <div className="flex flex-col items-center">
-                            <span className="text-neon-purple text-[10px] uppercase tracking-[0.4em] font-bold opacity-80 mb-2">HOT SHOTS'26 COORDINATORS</span>
-                            <div className="h-px w-24 bg-gradient-to-r from-transparent via-neon-purple/40 to-transparent" />
+                            <span className="text-neon-red text-[10px] uppercase tracking-[0.4em] font-bold opacity-80 mb-2">HOT SHOTS'26 COORDINATORS</span>
+                            <div className="h-px w-24 bg-gradient-to-r from-transparent via-neon-red/40 to-transparent" />
                         </div>
 
                         <div className="flex flex-col sm:flex-row items-center gap-8 md:gap-12">
                             {/* Coordinator 1 */}
                             <div className="flex flex-col items-center gap-3 group">
-                                <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-purple/30 transition-all duration-300">
+                                <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
                                     <span className="text-white text-lg font-display font-bold tracking-tight">Tanish</span>
                                     <a
                                         href="wa.me/+918086591470"
-                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-purple/10 text-neon-purple border border-neon-purple/20 hover:bg-neon-purple hover:text-black transition-all duration-300"
+                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
                                     >
                                         Contact
                                     </a>
@@ -95,11 +95,11 @@ export default function HotShotsRegistrationPage() {
 
                             {/* Coordinator 2 */}
                             <div className="flex flex-col items-center gap-3 group">
-                                <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-purple/30 transition-all duration-300">
+                                <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
                                     <span className="text-white text-lg font-display font-bold tracking-tight">Keerthana</span>
                                     <a
                                         href="wa.me/+918136811493"
-                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-purple/10 text-neon-purple border border-neon-purple/20 hover:bg-neon-purple hover:text-black transition-all duration-300"
+                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
                                     >
                                         Contact
                                     </a>
@@ -111,9 +111,9 @@ export default function HotShotsRegistrationPage() {
 
                     {/* Divider */}
                     <div className="flex items-center gap-4 justify-center pt-2">
-                        <div className="h-px w-16 bg-gradient-to-r from-transparent to-neon-purple/60" />
-                        <span className="text-neon-purple/40 text-[9px] font-mono tracking-[0.4em] uppercase">March 23 · VKCET</span>
-                        <div className="h-px w-16 bg-gradient-to-l from-transparent to-neon-purple/60" />
+                        <div className="h-px w-16 bg-gradient-to-r from-transparent to-neon-red/60" />
+                        <span className="text-neon-red/40 text-[9px] font-mono tracking-[0.4em] uppercase">March 23 · VKCET</span>
+                        <div className="h-px w-16 bg-gradient-to-l from-transparent to-neon-red/60" />
                     </div>
                 </motion.div>
 
@@ -128,37 +128,18 @@ export default function HotShotsRegistrationPage() {
                         style={{ background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(20px)' }}>
 
                         {/* Top accent line */}
-                        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-neon-purple to-transparent" />
+                        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-neon-red to-transparent" />
 
-                        {/* Registration Button Section */}
-                        <div className="px-6 py-16 sm:px-8 sm:py-20 flex flex-col items-center justify-center gap-8 relative overflow-hidden text-center">
-                            {/* Animated Background Glow for Button */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-purple/[0.08] blur-[120px] rounded-full animate-pulse" />
-
-                            <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSd7XJ8xT6_Xw5f6_yOQ4Jq9_7B-9_9_9_9_9/viewform"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group relative px-6 py-4 sm:px-12 sm:py-6 rounded-2xl text-white no-underline transition-all duration-500 hover:scale-105 active:scale-95 overflow-hidden border border-neon-purple/30 shadow-[0_0_40px_rgba(188,19,254,0.15)]"
-                                style={{
-                                    background: 'rgba(188, 19, 254, 0.05)',
-                                    backdropFilter: 'blur(20px)',
-                                    boxShadow: 'inset 0 0 20px rgba(188, 19, 254, 0.1)'
-                                }}
-                            >
-                                {/* Shine Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-
-                                <div className="relative flex flex-col items-center">
-                                    <span className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-[0.15em] sm:tracking-[0.2em] uppercase text-white drop-shadow-[0_0_15px_rgba(188,19,254,0.6)]" style={{ fontFamily: "'Orbitron', sans-serif" }}>
-                                        Registration
-                                    </span>
-                                    <span className="text-[10px] sm:text-[11px] tracking-[0.4em] sm:tracking-[0.6em] text-neon-purple font-bold uppercase opacity-80 mt-2">Open Official Portal</span>
-                                </div>
-                            </a>
-
-                            <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] max-w-sm leading-relaxed font-mono">
-                                External Gateway Access · Secure Redirect
+                        {/* Info Section (Replaced Registration Button) */}
+                        <div className="px-6 py-12 sm:px-8 sm:py-16 flex flex-col items-center justify-center gap-6 relative overflow-hidden text-center">
+                            <div className="w-16 h-16 rounded-2xl bg-neon-red/10 flex items-center justify-center text-neon-red mb-2">
+                                <Camera size={32} />
+                            </div>
+                            <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-white uppercase" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                                Direct Contact for Registration
+                            </h3>
+                            <p className="text-white/40 text-sm tracking-widest uppercase max-w-sm mx-auto leading-relaxed">
+                                Contact the coordinators for registration.
                             </p>
                         </div>
 
@@ -181,25 +162,32 @@ export default function HotShotsRegistrationPage() {
                         style={{ background: 'rgba(10,10,10,0.6)', backdropFilter: 'blur(20px)' }}>
 
                         {/* Top accent line */}
-                        <div className="absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-neon-purple/30 to-transparent" />
+                        <div className="absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-neon-red/30 to-transparent" />
 
                         <div className="flex items-center gap-4 mb-8">
-                            <div className="w-10 h-10 rounded-xl bg-neon-purple/10 flex items-center justify-center text-neon-purple">
+                            <div className="w-10 h-10 rounded-xl bg-neon-red/10 flex items-center justify-center text-neon-red">
                                 <ShieldAlert size={20} />
                             </div>
-                            <h2 className="text-2xl font-display font-bold tracking-wider uppercase text-white">Rules & Regulations</h2>
+                            <h2 className="text-2xl font-display font-bold tracking-wider uppercase text-white">Reel Competition Guidlines</h2>
                         </div>
 
                         <ul className="space-y-6">
                             {[
-                                "Entries must be original works of the participant captured within the last 12 months.",
-                                "Basic editing is allowed, but composite images or AI-generated content will be disqualified.",
-                                "Submit your entries in high-resolution JPEG/PNG format via the official portal.",
-                                "Each participant can submit up to 3 entries across different themes.",
-                                "The decision of the expert panel will be final and binding for the competition."
+                                "The theme should be based on college or school life and can include dance moves, creative content, or fun elements.",
+                                "Candidates must follow our Instagram pages:",
+                                "@prayan_vke",
+                                "@4amfilms_",
+                                "Each student is allowed to submit only one entry for the competition.",
+                                "The maximum duration of the reel is 90 seconds.",
+                                "Entries must be submitted in MP4 or MOV format only.",
+                                "A minimum of 200 likes and shares is required for qualification of the entry.",
+                                "The last date for submission is March 18, 2026.",
+                                "Downloaded or reposted videos are not allowed. Such entries will be rejected.",
+                                "The prize will be awarded based on fair judgment, number of likes, videography skills, and video quality.",
+                                "You can submit your entry through WhatsApp (as a document).",
                             ].map((rule, idx) => (
                                 <li key={idx} className="flex gap-3 sm:gap-4 group">
-                                    <span className="text-neon-purple font-mono text-[10px] sm:text-xs mt-1 opacity-50 font-bold">0{idx + 1}</span>
+                                    <span className="text-neon-red font-mono text-[15px] sm:text-xs mt-1 opacity-50 font-bold">0{idx + 1}</span>
                                     <p className="text-white/60 text-xs sm:text-sm leading-relaxed tracking-wide group-hover:text-white/80 transition-colors">
                                         {rule}
                                     </p>

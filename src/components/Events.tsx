@@ -82,7 +82,7 @@ export const Events = () => {
     {
       title: 'HOT SHOTS',
       description: 'Unleash your creativity and capture the perfect moment in our premier photography challenge.',
-      color: 'purple',
+      color: 'red',
       image: '/posters/hotshots.jpeg',
       registerLink: '/register/hot-shots',
     },
