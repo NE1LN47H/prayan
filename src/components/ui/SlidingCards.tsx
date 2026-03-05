@@ -19,15 +19,20 @@ type SlidingCardsProps = {
     centerIcon?: React.ReactNode;
     visibleRange?: number;
     onCardClick?: (index: number) => void;
+    showSwipeLabel?: boolean;
 };
 
 const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
     cards,
     className = "",
     onCardClick,
+    showSwipeLabel = true,
 }) => {
     const cardStackRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<HTMLElement[]>([]);
+    // ... scroll logic (unchanged)
+    // ... (omitting mid lines for brevity in instruction, will target specifically below)
+
 
     useEffect(() => {
         const cardStack = cardStackRef.current;
@@ -179,20 +184,22 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
             ))}
 
             {/* Swipe Label */}
-            <div className="absolute -bottom-24 left-0 right-0 flex flex-col items-center gap-4 animate-pulse pointer-events-none">
-                <div className="flex items-center gap-6">
-                    <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
-                    <span className="text-base md:text-xl uppercase tracking-[0.6em] font-black text-neon-red drop-shadow-[0_0_20px_rgba(255,0,60,1)] text-center" style={{ fontFamily: "'Orbitron', sans-serif" }}>
-                        Swipe The Events
-                    </span>
-                    <div className="w-16 h-[2px] bg-gradient-to-l from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
+            {showSwipeLabel && (
+                <div className="absolute -bottom-24 left-0 right-0 flex flex-col items-center gap-4 animate-pulse pointer-events-none">
+                    <div className="flex items-center gap-6">
+                        <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
+                        <span className="text-base md:text-xl uppercase tracking-[0.6em] font-black text-neon-red drop-shadow-[0_0_20px_rgba(255,0,60,1)] text-center" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                            Swipe The Events
+                        </span>
+                        <div className="w-16 h-[2px] bg-gradient-to-l from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
+                    </div>
+                    <div className="flex gap-3">
+                        {[1, 2, 3].map((i) => (
+                            <div key={i} className="w-2.5 h-2.5 rounded-full bg-neon-red shadow-[0_0_10px_rgba(255,0,60,0.5)] animate-ping" style={{ animationDelay: `${i * 0.3}s` }} />
+                        ))}
+                    </div>
                 </div>
-                <div className="flex gap-3">
-                    {[1, 2, 3].map((i) => (
-                        <div key={i} className="w-2.5 h-2.5 rounded-full bg-neon-red shadow-[0_0_10px_rgba(255,0,60,0.5)] animate-ping" style={{ animationDelay: `${i * 0.3}s` }} />
-                    ))}
-                </div>
-            </div>
+            )}
         </section>
     );
 });

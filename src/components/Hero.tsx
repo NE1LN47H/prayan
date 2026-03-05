@@ -168,7 +168,7 @@ export const Hero = () => {
               <div className="beam-line beam-bot absolute top-1/2 left-0 right-0 h-[1.5px] bg-neon-red shadow-[0_0_10px_#ff003c] z-30 scale-x-0" />
 
               <h1
-                className="ares-text glass-text-3d relative text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none whitespace-nowrap overflow-hidden"
+                className="ares-text glass-text-3d relative text-3xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none whitespace-nowrap overflow-hidden"
                 style={{ fontFamily: "'TronAres', 'Orbitron', sans-serif" }}
               >
                 PRAYAN<span className="text-neon-red drop-shadow-[0_0_15px_rgba(255,0,60,0.4)]">'26</span>

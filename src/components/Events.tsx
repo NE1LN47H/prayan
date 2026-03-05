@@ -175,7 +175,7 @@ export const Events = () => {
         </div>
 
         {/* Decks Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 lg:gap-8 items-start">
           {/* Online Events Deck */}
           <div className="space-y-8">
             <DeckLabel text="Online" />
@@ -185,13 +185,13 @@ export const Events = () => {
           {/* Cultural Events Deck */}
           <div className="space-y-8">
             <DeckLabel text="Cultural" />
-            <SlidingCards cards={culturalCardsData} />
+            <SlidingCards cards={culturalCardsData} showSwipeLabel={false} />
           </div>
 
           {/* Stage Events Deck */}
           <div className="space-y-8">
             <DeckLabel text="Stage" />
-            <SlidingCards cards={stageCardsData} />
+            <SlidingCards cards={stageCardsData} showSwipeLabel={false} />
           </div>
         </div>
         {/* VKCET Venue */}
