@@ -56,7 +56,7 @@ export default function PhotographyRegistrationPage() {
                             className="text-[11px] tracking-[0.5em] uppercase text-neon-red/70 font-mono"
                             style={{ fontFamily: "'Orbitron', sans-serif" }}
                         >
-                            Cultural Events · Photography
+                            Cultural Events · Captura
                         </span>
                     </div>
 
@@ -64,7 +64,7 @@ export default function PhotographyRegistrationPage() {
                         className="text-4xl sm:text-7xl md:text-8xl font-display font-bold tracking-tighter uppercase"
                         style={{ fontFamily: "'TronAres','Orbitron', sans-serif", textShadow: '0 0 40px rgba(255,0,60,0.2)' }}
                     >
-                        PHOTOGRAPHY
+                        CAPTURA
                     </h1>
 
                     <p className="text-white/40 text-sm tracking-widest uppercase max-w-md mx-auto">
@@ -177,13 +177,18 @@ export default function PhotographyRegistrationPage() {
 
                         <ul className="space-y-6">
                             {[
-                                "Entries must be original works of the participant captured within the last 12 months.",
-                                "Basic editing is allowed, but composite images or AI-generated content will be disqualified.",
-                                "Submit your entries in high-resolution JPEG/PNG format via WhatsApp to the coordinators.",
-                                "Each participant can submit up to 3 entries across different themes.",
-                                "The decision of the expert panel will be final and binding for the competition.",
-                                "The themes will be provided by the coordinators upon contact.",
-                                "A minimum of engagement metrics may be required for qualification in certain categories."
+                                "The theme should be based on college or school life and can include dance moves, creative content, or fun elements.",
+                                "Candidates must follow our Instagram pages:",
+                                "@prayan_vke",
+                                "@4amfilms_",
+                                "Each student is allowed to submit only one entry for the competition.",
+                                "The maximum duration of the reel is 90 seconds.",
+                                "Entries must be submitted in MP4 or MOV format only.",
+                                "A minimum of 200 likes and shares is required for qualification of the entry.",
+                                "The last date for submission is March 18, 2026.",
+                                "Downloaded or reposted videos are not allowed. Such entries will be rejected.",
+                                "The prize will be awarded based on fair judgment, number of likes, videography skills, and video quality.",
+                                "You can submit your entry through WhatsApp (as a document).",
                             ].map((rule, idx) => (
                                 <li key={idx} className="flex gap-3 sm:gap-4 group">
                                     <span className="text-neon-red font-mono text-[15px] sm:text-xs mt-1 opacity-50 font-bold">0{idx + 1}</span>

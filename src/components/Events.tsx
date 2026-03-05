@@ -87,9 +87,10 @@ export const Events = () => {
       registerLink: '/register/hot-shots',
     },
     {
-      title: 'PHOTOGRAPHY',
+      title: 'Captura',
       description: 'Capture the essence of the moment in our premier photography challenge.',
       color: 'red',
+      image: '/posters/captura.jpeg',
       registerLink: '/register/photography',
     },
   ];

@@ -148,7 +148,7 @@ export default function HotShotsRegistrationPage() {
                         {/* Bottom bar */}
                         <div className="flex items-center justify-between px-6 py-3 border-t border-white/5">
                             <span className="text-[9px] font-mono text-white/10 uppercase tracking-[0.3em]">VKCET · Parippally</span>
-                            <span className="text-[9px] font-mono text-white/10 uppercase tracking-[0.3em]">Grid OS v2.0.26</span>
+                            <span className="text-[9px] font-mono text-white/10 uppercase tracking-[0.3em]">PRAYAN'26</span>
                         </div>
                     </div>
                 </motion.div>
