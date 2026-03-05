@@ -149,7 +149,7 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
         <section
             ref={cardStackRef}
             className={cn(
-                "relative w-full max-w-[400px] h-[520px] mx-auto overflow-visible touch-pan-y select-none py-10",
+                "relative w-full max-w-[360px] h-[520px] mx-auto overflow-visible touch-pan-y select-none py-10",
                 className
             )}
             style={{ perspective: "1000px", transformStyle: "preserve-3d" }}

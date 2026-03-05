@@ -70,15 +70,7 @@ export const Events = () => {
     });
   }, { scope: containerRef });
 
-  const techEvents: any[] = [];
-
-  const culturalEvents = [
-    {
-      title: 'LAYAM',
-      description: 'Showcase your rhythm and energy in the most anticipated Inter-college Dance competition of the year.',
-      color: 'red',
-      registerLink: '/register/layam',
-    },
+  const onlineEvents = [
     {
       title: 'HOT SHOTS',
       description: 'Unleash your creativity and capture the perfect moment in our premier reels challenge.',
@@ -93,42 +85,113 @@ export const Events = () => {
       image: '/posters/captura.jpeg',
       registerLink: '/register/photography',
     },
+    {
+      title: 'Aabheri',
+      description: 'The soul of music. Compete in our classical music competition and shine.',
+      color: 'red',
+      registerLink: '/register/aabheri',
+    },
   ];
 
-  const allEvents = React.useMemo(() => [
-    ...techEvents,
-    ...culturalEvents,
+  const culturalEvents = [
     {
-      title: 'Events',
-      description: 'More exciting events are on the way. Stay tuned for the full lineup!',
-      color: 'red',
-      isComingSoon: true,
+      title: 'Estella',
+      description: 'The personality contest where grace meets intelligence. Be the face of Prayan.',
+      color: 'purple',
+      registerLink: '/register/estella',
     },
-  ], [techEvents, culturalEvents]);
+    {
+      title: 'Mr & Mrs Prayan',
+      description: 'The hunt for the ultimate duo. Showcase your charisma and teamwork.',
+      color: 'purple',
+      registerLink: '/register/mr-mrs-prayan',
+    },
+  ];
 
-  const slidingCardsData = React.useMemo(() =>
-    allEvents.map((event, i) => ({
+  const stageEvents = [
+    {
+      title: 'LAYAM',
+      description: 'Showcase your rhythm and energy in the most anticipated Inter-college Dance competition of the year.',
+      color: 'red',
+      registerLink: '/register/layam',
+    },
+    {
+      title: 'Music Show',
+      description: 'An evening of melodies and high energy performance by the best talents.',
+      color: 'orange',
+      registerLink: '/register/music-show',
+    },
+    {
+      title: 'Fashion Show',
+      description: 'Walk the ramp with style and attitude at our flagship fashion event.',
+      color: 'pink',
+      registerLink: '/register/fashion-show',
+    },
+    {
+      title: 'Quiz.com',
+      description: 'Test your knowledge across technology, culture, and more in our mega quiz.',
+      color: 'blue',
+      registerLink: '/register/quiz',
+    },
+  ];
+
+  const formatCards = (eventsList: any[]) =>
+    eventsList.map((event, i) => ({
       id: i,
       title: event.title,
       description: event.description,
       content: <EventCard {...event} />
-    })), [allEvents]);
+    }));
+
+  const onlineCardsData = formatCards(onlineEvents);
+  const culturalCardsData = formatCards(culturalEvents);
+  const stageCardsData = formatCards(stageEvents);
+
+  const DeckLabel = ({ text }: { text: string }) => (
+    <div className="flex flex-col items-center mb-12">
+      <div className="flex items-center gap-6">
+        <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
+        <span className="text-xl md:text-3xl uppercase tracking-[0.6em] font-black text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] text-center px-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+          {text}
+        </span>
+        <div className="w-16 h-[2px] bg-gradient-to-l from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
+      </div>
+    </div>
+  );
 
   return (
     <section ref={containerRef} id="events" className="py-20 md:py-32 px-6 bg-black/50">
-      <div className="max-w-7xl mx-auto space-y-20 md:space-y-32">
+      <div className="max-w-7xl mx-auto space-y-20 md:space-y-48">
+        {/* Main Title */}
         <div className="space-y-12 md:space-y-16">
           <Reveal>
             <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
               <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
-                TECH <span className="text-neon-red">EVENTS</span>
+                FEST <span className="text-neon-red">HIGHLIGHTS</span>
               </h2>
               <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Innovation & Excellence</p>
             </div>
           </Reveal>
+        </div>
 
-          <div className="w-full max-w-7xl mx-auto py-12">
-            <SlidingCards cards={slidingCardsData} className="mt-12" />
+        {/* Decks Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 lg:gap-8 items-start">
+          {/* Online Events Deck */}
+          <div className="space-y-8">
+            <DeckLabel text="Online" />
+            <SlidingCards cards={onlineCardsData} />
+          </div>
+
+          {/* Cultural Events Deck */}
+          <div className="space-y-8">
+            <DeckLabel text="Cultural" />
+            <SlidingCards cards={culturalCardsData} />
+          </div>
+
+          {/* Stage Events Deck */}
+          <div className="space-y-8">
+            <DeckLabel text="Stage" />
+            <SlidingCards cards={stageCardsData} />
           </div>
         </div>
         {/* VKCET Venue */}
