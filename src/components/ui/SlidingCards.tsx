@@ -36,7 +36,9 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
 
         let isSwiping = false;
         let startX = 0;
+        let startY = 0;
         let currentX = 0;
+        let currentY = 0;
         let animationFrameId: number | null = null;
 
         const getDuration = () => 300;
@@ -62,22 +64,34 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
             card.style.opacity = `${opacity}`;
         };
 
-        const handleStart = (clientX: number) => {
+        const handleStart = (clientX: number, clientY: number) => {
             if (isSwiping) return;
             isSwiping = true;
             startX = currentX = clientX;
+            startY = currentY = clientY;
             const card = getActiveCard();
             if (card) {
                 card.style.transition = "none";
             }
         };
 
-        const handleMove = (clientX: number) => {
+        const handleMove = (clientX: number, clientY: number) => {
             if (!isSwiping) return;
+
+            const deltaX = clientX - startX;
+            const deltaY = clientY - startY;
+
+            // If we've moved more vertically than horizontally at the start, 
+            // cancel the swipe to allow natural scrolling
+            if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 10) {
+                isSwiping = false;
+                updatePositions();
+                return;
+            }
+
             if (animationFrameId) cancelAnimationFrame(animationFrameId);
             animationFrameId = requestAnimationFrame(() => {
                 currentX = clientX;
-                const deltaX = currentX - startX;
                 applySwipeStyles(deltaX);
             });
         };
@@ -110,11 +124,11 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
             }
 
             isSwiping = false;
-            startX = currentX = 0;
+            startX = currentX = startY = currentY = 0;
         };
 
-        const onPointerDown = (e: PointerEvent) => handleStart(e.clientX);
-        const onPointerMove = (e: PointerEvent) => handleMove(e.clientX);
+        const onPointerDown = (e: PointerEvent) => handleStart(e.clientX, e.clientY);
+        const onPointerMove = (e: PointerEvent) => handleMove(e.clientX, e.clientY);
         const onPointerUp = () => handleEnd();
 
         cardStack.addEventListener("pointerdown", onPointerDown);
@@ -135,7 +149,7 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
         <section
             ref={cardStackRef}
             className={cn(
-                "relative w-full max-w-[400px] h-[520px] mx-auto overflow-visible touch-none select-none py-10",
+                "relative w-full max-w-[400px] h-[520px] mx-auto overflow-visible touch-pan-y select-none py-10",
                 className
             )}
             style={{ perspective: "1000px", transformStyle: "preserve-3d" }}

@@ -13,12 +13,12 @@ const EVENT_DATE = new Date('2026-03-23T00:00:00+05:30').getTime();
 function getTimeLeft() {
   const diff = Math.max(0, EVENT_DATE - Date.now());
   const d = Math.floor(diff / 1000 / 3600 / 24);
+  const h = Math.floor((diff / 1000 / 3600) % 24);
   const m = Math.floor((diff / 1000 / 60) % 60);
-  const s = Math.floor((diff / 1000) % 60);
   return {
     d: String(d).padStart(2, '0'),
+    h: String(h).padStart(2, '0'),
     m: String(m).padStart(2, '0'),
-    s: String(s).padStart(2, '0'),
   };
 }
 
@@ -187,9 +187,9 @@ export const Hero = () => {
           <div className="flex items-center gap-1">
             <TronDigit value={time.d} label="Days" />
             <TronColon />
-            <TronDigit value={time.m} label="Minutes" />
+            <TronDigit value={time.h} label="Hours" />
             <TronColon />
-            <TronDigit value={time.s} label="Seconds" />
+            <TronDigit value={time.m} label="Minutes" />
           </div>
 
           {/* Date badge */}
