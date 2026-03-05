@@ -185,17 +185,17 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
 
             {/* Swipe Label */}
             {showSwipeLabel && (
-                <div className="absolute -bottom-24 left-0 right-0 flex flex-col items-center gap-4 animate-pulse pointer-events-none">
-                    <div className="flex items-center gap-6">
-                        <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
-                        <span className="text-base md:text-xl uppercase tracking-[0.6em] font-black text-neon-red drop-shadow-[0_0_20px_rgba(255,0,60,1)] text-center" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                <div className="absolute -bottom-16 left-0 right-0 flex flex-col items-center gap-3 animate-pulse pointer-events-none">
+                    <div className="flex items-center gap-3">
+                        <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-neon-red/50 to-neon-red/50" />
+                        <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold text-neon-red/80 drop-shadow-[0_0_10px_rgba(255,0,60,0.5)] text-center" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                             Swipe The Events
                         </span>
-                        <div className="w-16 h-[2px] bg-gradient-to-l from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
+                        <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-neon-red/50 to-neon-red/50" />
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-2">
                         {[1, 2, 3].map((i) => (
-                            <div key={i} className="w-2.5 h-2.5 rounded-full bg-neon-red shadow-[0_0_10px_rgba(255,0,60,0.5)] animate-ping" style={{ animationDelay: `${i * 0.3}s` }} />
+                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-neon-red/60 shadow-[0_0_8px_rgba(255,0,60,0.4)] animate-ping" style={{ animationDelay: `${i * 0.3}s` }} />
                         ))}
                     </div>
                 </div>
