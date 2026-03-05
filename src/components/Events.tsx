@@ -89,6 +89,7 @@ export const Events = () => {
       title: 'Aabheri',
       description: 'The soul of music. Compete in our classical music competition and shine.',
       color: 'red',
+      image: '/posters/aabheri.jpeg',
       registerLink: '/register/aabheri',
     },
   ];
@@ -149,12 +150,12 @@ export const Events = () => {
 
   const DeckLabel = ({ text }: { text: string }) => (
     <div className="flex flex-col items-center mb-12">
-      <div className="flex items-center gap-6">
-        <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
-        <span className="text-xl md:text-3xl uppercase tracking-[0.6em] font-black text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] text-center px-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+      <div className="flex items-center gap-3 md:gap-4">
+        <div className="w-8 md:w-12 h-[1.5px] bg-neon-red/50" />
+        <span className="text-lg md:text-xl uppercase tracking-[0.2em] font-bold text-white text-center whitespace-nowrap" style={{ fontFamily: "'Orbitron', sans-serif" }}>
           {text}
         </span>
-        <div className="w-16 h-[2px] bg-gradient-to-l from-transparent via-neon-red to-neon-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
+        <div className="w-8 md:w-12 h-[1.5px] bg-neon-red/50" />
       </div>
     </div>
   );
@@ -190,7 +191,7 @@ export const Events = () => {
 
           {/* Stage Events Deck */}
           <div className="space-y-8">
-            <DeckLabel text="Stage" />
+            <DeckLabel text="Inter-College" />
             <SlidingCards cards={stageCardsData} showSwipeLabel={false} />
           </div>
         </div>
