@@ -7,34 +7,18 @@ import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const SPONSORS_DATA = [
+  { name: 'Mafatlal', logo: '/sponsors/mafatlal.png' },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+];
+
 export const Sponsors = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    gsap.from('.sponsor-logo', {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-      },
-      scale: 0.8,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: 'back.out(1.7)',
-    });
-  }, { scope: containerRef });
-
-  const sponsors = [
-    { name: 'Sponsors', logo: null },
-    { name: 'Sponsors', logo: null },
-    { name: 'Sponsors', logo: null },
-    { name: 'Sponsors', logo: null },
-    { name: 'Sponsors', logo: null },
-    { name: 'Sponsors', logo: null },
-  ];
-
   return (
-    <section ref={containerRef} id="sponsors" className="py-20 md:py-32 px-6">
+    <section id="sponsors" className="py-20 md:py-32 px-6">
       <div className="max-w-7xl mx-auto space-y-16 md:space-y-20">
         <div className="text-center space-y-4">
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
@@ -43,18 +27,25 @@ export const Sponsors = () => {
           <p className="text-white/40 uppercase tracking-widest text-sm">Empowering the Vision</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {sponsors.map((sponsor, i) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {SPONSORS_DATA.map((sponsor, i) => (
             <div
               key={i}
-              className="sponsor-logo glass p-8 rounded-2xl flex items-center justify-center grayscale hover:grayscale-0 hover:border-neon-red transition-all duration-500 group"
+              className={`sponsor-logo glass p-8 rounded-2xl flex items-center justify-center transition-all duration-500 group border border-white/5 hover:border-neon-red ${sponsor.logo ? 'grayscale-0' : 'opacity-20'
+                }`}
             >
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="max-h-12 w-auto opacity-50 group-hover:opacity-100 transition-opacity"
-                referrerPolicy="no-referrer"
-              />
+              {sponsor.logo ? (
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-h-16 w-auto opacity-100 group-hover:scale-105 transition-all duration-300"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <span className="text-white/20 font-display font-bold tracking-widest text-xs uppercase italic">
+                  {sponsor.name}
+                </span>
+              )}
             </div>
           ))}
         </div>
