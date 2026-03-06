@@ -41,6 +41,15 @@ export default function App() {
       infinite: false,
     });
 
+    // GSAP ScrollTrigger configuration for mobile smoothness
+    ScrollTrigger.config({
+      ignoreMobileResize: true,
+    });
+
+    if ('ontouchstart' in window) {
+      ScrollTrigger.normalizeScroll(true);
+    }
+
     lenis.on('scroll', ScrollTrigger.update);
 
     gsap.ticker.add((time) => {

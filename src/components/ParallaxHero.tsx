@@ -40,23 +40,32 @@ export const ParallaxHero = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger,
-                start: '0% 0%',
-                end: '100% 0%',
-                scrub: 0.5,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: window.innerWidth < 768 ? 1 : 0.5,
+                invalidateOnRefresh: true,
             },
         });
 
         LAYERS.forEach((layer, idx) => {
             tl.to(
                 trigger.querySelectorAll(`[data-parallax-layer="${layer.id}"]`),
-                { yPercent: layer.yPercent, ease: 'none' },
+                { 
+                    yPercent: layer.yPercent, 
+                    ease: 'none',
+                    force3D: true,
+                },
                 idx === 0 ? undefined : '<',
             );
         });
 
         tl.to(
             trigger.querySelectorAll('[data-parallax-layer="3"]'),
-            { yPercent: 40, ease: 'none' },
+            { 
+                yPercent: 40, 
+                ease: 'none',
+                force3D: true,
+            },
             '<',
         );
 
