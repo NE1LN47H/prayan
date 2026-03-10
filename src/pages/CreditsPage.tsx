@@ -8,15 +8,15 @@ const CREDITS = [
     {
         title: 'Developed By',
         members: [
-            { name: 'Neilnath P', role: null },
+            { name: 'Neilnath P', role: null, image: '/team/neil.jpeg' },
         ],
     },
     {
         title: 'Prayan Media Team',
         members: [
-            { name: 'Bharath Bhadran', role: 'Design' },
-            { name: 'Abhijith Kumar', role: 'Content' },
-            { name: 'Albin', role: 'Content' },
+            { name: 'Bharath Bhadran', role: 'Design', image: '/team/bharath.jpeg' },
+            { name: 'Abhijith Kumar', role: 'Content', image: '/team/abhijith.jpeg' },
+            { name: 'Albin Saju', role: 'Content', image: '/team/albin.jpeg' },
         ],
     },
 ];
@@ -42,65 +42,65 @@ export default function CreditsPage() {
                     </div>
 
                     {/* Main panel */}
-                    <div className="flex-1 flex items-center justify-center px-4 pb-16">
+                    <div className="flex-1 flex items-center justify-center px-4 py-8 md:py-16">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={mounted ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="w-full max-w-2xl bg-zinc-950/90 border border-white/5 p-8 md:p-14 rounded-none shadow-2xl"
+                            className="w-full max-w-4xl bg-zinc-950/90 border border-white/5 p-6 md:p-12 lg:p-16 rounded-none shadow-2xl"
                         >
                             {/* Header */}
-                            <div className="space-y-3 mb-12">
+                            <div className="space-y-4 mb-10 md:mb-16">
                                 <span
-                                    className="text-white/30 text-[10px] uppercase tracking-[0.5em] block"
+                                    className="text-white/30 text-[9px] md:text-[10px] uppercase tracking-[0.5em] block"
                                     style={{ fontFamily: "'Orbitron',sans-serif" }}
                                 >
                                     PRAYAN 2026
                                 </span>
                                 <h1
-                                    className="text-5xl md:text-6xl font-bold tracking-tighter leading-none"
+                                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none"
                                     style={{ fontFamily: "'TronAres','Orbitron',sans-serif" }}
                                 >
                                     MEET OUR{' '}
                                     <span className="text-white/20">TEAM</span>
                                 </h1>
-                                <p className="text-white/40 text-sm leading-relaxed mt-2">
+                                <p className="text-white/40 text-xs sm:text-sm md:text-base max-w-lg leading-relaxed mt-4">
                                     Discover the dedicated team powering PRAYAN 2026's online presence.
                                 </p>
                             </div>
 
                             {/* Credits grid */}
-                            <div className="grid md:grid-cols-2 gap-10 border-t border-white/5 pt-10">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 border-t border-white/5 pt-10 md:pt-16">
                                 {CREDITS.map((section, si) => (
                                     <motion.div
                                         key={si}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={mounted ? { opacity: 1, y: 0 } : {}}
                                         transition={{ delay: 0.3 + si * 0.1, duration: 0.6 }}
-                                        className="space-y-6"
+                                        className="space-y-8"
                                     >
                                         <h4
-                                            className="text-[10px] uppercase tracking-[0.4em] text-white/50 pb-4 border-b border-white/10"
+                                            className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-white/50 pb-4 border-b border-white/10"
                                             style={{ fontFamily: "'Orbitron',sans-serif" }}
                                         >
                                             {section.title}
                                         </h4>
-                                        <div className="space-y-6">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8">
                                             {section.members.map((m, mi) => (
                                                 <div key={mi} className="flex items-center gap-4 group">
-                                                    <div className="w-14 h-14 rounded-full overflow-hidden bg-white/5 border border-white/10 group-hover:border-white/30 transition-colors shrink-0">
+                                                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden bg-white/5 border border-white/10 group-hover:border-white/30 transition-all duration-300 shrink-0">
                                                         <img
-                                                            src={`https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=ffffff&color=000000`}
+                                                            src={m.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=ffffff&color=000000`}
                                                             alt={m.name}
-                                                            className="w-full h-full object-cover"
+                                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                                         />
                                                     </div>
-                                                    <div>
-                                                        <p className="text-lg font-display font-medium text-white/90 group-hover:text-white transition-colors">
+                                                    <div className="min-w-0">
+                                                        <p className="text-base md:text-xl font-display font-medium text-white/90 group-hover:text-white transition-colors truncate">
                                                             {m.name}
                                                         </p>
                                                         {m.role && (
-                                                            <p className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5"
+                                                            <p className="text-[9px] md:text-[10px] text-white/30 uppercase tracking-widest mt-1"
                                                                 style={{ fontFamily: "'Orbitron',sans-serif" }}>
                                                                 {m.role}
                                                             </p>

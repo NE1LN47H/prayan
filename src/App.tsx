@@ -17,6 +17,8 @@ import CreditsPage from './pages/CreditsPage';
 import LayamRegistrationPage from './pages/LayamRegistrationPage';
 import HotShotsRegistrationPage from './pages/HotShotsRegistrationPage';
 import PhotographyRegistrationPage from './pages/PhotographyRegistrationPage';
+import EFootballRegistrationPage from './pages/EFootballRegistrationPage';
+import FreeFireRegistrationPage from './pages/FreeFireRegistrationPage';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -78,6 +80,8 @@ export default function App() {
       <Route path="/register/layam" element={<LayamRegistrationPage />} />
       <Route path="/register/hot-shots" element={<HotShotsRegistrationPage />} />
       <Route path="/register/photography" element={<PhotographyRegistrationPage />} />
+      <Route path="/register/efootball" element={<EFootballRegistrationPage />} />
+      <Route path="/register/free-fire" element={<FreeFireRegistrationPage />} />
 
       {/* Main site */}
       <Route path="*" element={

@@ -1,0 +1,211 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, Target, ShieldAlert } from 'lucide-react';
+
+export default function FreeFireRegistrationPage() {
+    return (
+        <div className="relative min-h-screen bg-black text-white overflow-hidden flex flex-col">
+
+            {/* Background Grid */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+            </div>
+
+            {/* Red glow top - Subtler for better rendering */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-neon-red/[0.03] blur-[150px] pointer-events-none" />
+
+            {/* Header */}
+            <motion.header
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6 border-b border-white/5"
+            >
+                <Link
+                    to="/"
+                    className="flex items-center gap-2 text-white/40 hover:text-white transition-colors duration-300 group text-xs tracking-[0.3em] uppercase font-mono no-underline"
+                >
+                    <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform duration-300" />
+                    Back to Prayan
+                </Link>
+
+                <span
+                    className="text-xs font-mono tracking-[0.4em] text-white/20 uppercase"
+                    style={{ fontFamily: "'Orbitron', sans-serif" }}
+                >
+                    Prayan '26
+                </span>
+            </motion.header>
+
+            {/* Main content */}
+            <div className="relative z-10 flex-1 flex flex-col items-center px-4 py-8 md:py-16">
+
+                {/* Title block */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.1 }}
+                    className="text-center mb-10 space-y-4"
+                >
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-neon-red/10 flex items-center justify-center text-neon-red">
+                            <Target size={20} />
+                        </div>
+                        <span
+                            className="text-[11px] tracking-[0.5em] uppercase text-neon-red/70 font-mono"
+                            style={{ fontFamily: "'Orbitron', sans-serif" }}
+                        >
+                            Online Events · Free Fire
+                        </span>
+                    </div>
+
+                    <h1
+                        className="text-4xl sm:text-7xl md:text-8xl font-display font-bold tracking-tighter uppercase"
+                        style={{ fontFamily: "'TronAres','Orbitron', sans-serif", textShadow: '0 0 40px rgba(255,0,60,0.2)' }}
+                    >
+                        Free Fire
+                    </h1>
+
+                    <p className="text-white/40 text-sm tracking-widest uppercase max-w-md mx-auto">
+                        Survival of the fittest. Battle it out in the ultimate mobile battle royale showdown
+                    </p>
+
+                    {/* Coordinators Highlight */}
+                    <div className="pt-8 pb-4 flex flex-col items-center gap-6">
+                        <div className="flex flex-col items-center">
+                            <span className="text-neon-red text-[10px] uppercase tracking-[0.4em] font-bold opacity-80 mb-2">Free Fire COORDINATORS</span>
+                            <div className="h-px w-24 bg-gradient-to-r from-transparent via-neon-red/40 to-transparent" />
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row items-center gap-8 md:gap-12">
+                            {/* Coordinator 1 */}
+                            <div className="flex flex-col items-center gap-3 group">
+                                <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
+                                    <span className="text-white text-lg font-display font-bold tracking-tight">Akshay</span>
+                                    <a
+                                        target="_blank"
+                                        href="https://wa.me/+917594968840"
+                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
+                                    >
+                                        Contact
+                                    </a>
+                                </div>
+                                <span className="text-white/30 text-[9px] uppercase tracking-[0.2em]">Lead-Coordinator</span>
+                            </div>
+
+                            {/* Coordinator 2 */}
+                            <div className="flex flex-col items-center gap-3 group">
+                                <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
+                                    <span className="text-white text-lg font-display font-bold tracking-tight">Vishnu</span>
+                                    <a
+                                        target='_blank'
+                                        href="https://wa.me/+919074091599"
+                                        className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
+                                    >
+                                        Contact
+                                    </a>
+                                </div>
+                                <span className="text-white/30 text-[9px] uppercase tracking-[0.2em]">Coordinator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="flex items-center gap-4 justify-center pt-2">
+                        <div className="h-px w-16 bg-gradient-to-r from-transparent to-neon-red/60" />
+                        <span className="text-neon-red/40 text-[9px] font-mono tracking-[0.4em] uppercase">Online Event · March 23</span>
+                        <div className="h-px w-16 bg-gradient-to-l from-transparent to-neon-red/60" />
+                    </div>
+                </motion.div>
+
+                {/* Info block */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="w-full max-w-2xl"
+                >
+                    <div className="relative rounded-2xl overflow-hidden border border-white/8"
+                        style={{ background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(20px)' }}>
+
+                        {/* Top accent line */}
+                        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-neon-red to-transparent" />
+
+                        {/* Info Section */}
+                        <div className="px-6 py-12 sm:px-8 sm:py-16 flex flex-col items-center justify-center gap-6 relative overflow-hidden text-center">
+                            <div className="w-16 h-16 rounded-2xl bg-neon-red/10 flex items-center justify-center text-neon-red mb-2">
+                                <Target size={32} />
+                            </div>
+                            <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-white uppercase" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                                Direct Contact for Registration
+                            </h3>
+                            <p className="text-white/40 text-sm tracking-widest uppercase max-w-sm mx-auto leading-relaxed">
+                                Contact the coordinators for registration and squad registration.
+                            </p>
+                        </div>
+
+                        {/* Bottom bar */}
+                        <div className="flex items-center justify-between px-6 py-3 border-t border-white/5">
+                            <span className="text-[9px] font-mono text-white/10 uppercase tracking-[0.3em]">VKCET · Online</span>
+                            <span className="text-[9px] font-mono text-white/10 uppercase tracking-[0.3em]">PRAYAN'26</span>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Rules & Regulations container */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="w-full max-w-2xl mt-12 mb-20"
+                >
+                    <div className="relative rounded-2xl overflow-hidden border border-white/8 p-6 sm:p-12"
+                        style={{ background: 'rgba(10,10,10,0.6)', backdropFilter: 'blur(20px)' }}>
+
+                        {/* Top accent line */}
+                        <div className="absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-neon-red/30 to-transparent" />
+
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="w-10 h-10 rounded-xl bg-neon-red/10 flex items-center justify-center text-neon-red">
+                                <ShieldAlert size={20} />
+                            </div>
+                            <h2 className="text-2xl font-display font-bold tracking-wider uppercase text-white">Battle Guidelines</h2>
+                        </div>
+
+                        <ul className="space-y-6">
+                            {[
+                                "The tournament will be conducted in Squad/Solo mode.",
+                                "Players must be ready at least 15 minutes before the scheduled match time.",
+                                "Room ID and Password will be shared in the WhatsApp group.",
+                                "Use of emulators or any third-party hacks is strictly prohibited.",
+                                "Team teaming is not allowed and will lead to immediate disqualification.",
+                                "In case of any connection issues, the match will continue as scheduled.",
+                                "The decision of the organizers will be final and binding.",
+                            ].map((rule, idx) => (
+                                <li key={idx} className="flex gap-3 sm:gap-4 group">
+                                    <span className="text-neon-red font-mono text-[15px] sm:text-xs mt-1 opacity-50 font-bold">0{idx + 1}</span>
+                                    <p className="text-white/60 text-xs sm:text-sm leading-relaxed tracking-wide group-hover:text-white/80 transition-colors">
+                                        {rule}
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </motion.div>
+            </div>
+
+            {/* Footer */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="relative z-10 text-center py-6 border-t border-white/5"
+            >
+                <p className="text-[9px] font-mono text-white/10 uppercase tracking-[0.4em]">
+                    Prayan '26 · VKCET · Battle Vibe
+                </p>
+            </motion.div>
+        </div>
+    );
+}

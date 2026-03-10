@@ -92,6 +92,20 @@ export const Events = () => {
       image: '/posters/aabheri.jpeg',
       registerLink: '/register/aabheri',
     },
+    {
+      title: 'e-Football',
+      description: 'Step onto the virtual pitch and prove your supremacy in our premier PES tournament.',
+      color: 'red',
+      image: '/posters/pes.jpeg',
+      registerLink: '/register/efootball',
+    },
+    {
+      title: 'Free Fire',
+      description: 'Survival of the fittest. Battle it out in the ultimate mobile battle royale showdown.',
+      color: 'red',
+      image: '/posters/freefire.jpeg',
+      registerLink: '/register/free-fire',
+    },
   ];
 
   const culturalEvents = [
@@ -117,19 +131,7 @@ export const Events = () => {
       registerLink: '/register/layam',
     },
     {
-      title: 'Music Show',
-      description: 'An evening of melodies and high energy performance by the best talents.',
-      color: 'orange',
-      registerLink: '/register/music-show',
-    },
-    {
-      title: 'Fashion Show',
-      description: 'Walk the ramp with style and attitude at our flagship fashion event.',
-      color: 'pink',
-      registerLink: '/register/fashion-show',
-    },
-    {
-      title: 'Quiz.com',
+      title: 'Quiz Competition',
       description: 'Test your knowledge across technology, culture, and more in our mega quiz.',
       color: 'blue',
       registerLink: '/register/quiz',

@@ -60,7 +60,11 @@ export interface BackgroundPathsProps {
 
 export function BackgroundPaths({ className, children, opacity = 0.3 }: BackgroundPathsProps) {
     return (
-        <div className={cn("absolute inset-0 overflow-hidden bg-black text-white", className)}>
+        <div className={cn(
+            "w-full bg-black text-white",
+            children ? "relative min-h-screen overflow-y-auto overflow-x-hidden" : "absolute inset-0 overflow-hidden",
+            className
+        )}>
             {/* Mirrored path sets for symmetry */}
             <FloatingPaths position={1} opacity={opacity} />
             <FloatingPaths position={-1} opacity={opacity} />
@@ -85,7 +89,7 @@ export function BackgroundPaths({ className, children, opacity = 0.3 }: Backgrou
             />
 
             {/* Content layer */}
-            {children && <div className="relative z-10 h-full w-full">{children}</div>}
+            {children && <div className="relative z-10 min-h-full w-full">{children}</div>}
         </div>
     )
 }
