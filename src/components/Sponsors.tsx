@@ -89,10 +89,27 @@ export const Footer = () => {
           <div className="space-y-6 md:pl-8">
             <Link
               to="/credits"
-              className="glass px-8 py-4 rounded-2xl border border-white/10 backdrop-blur-xl hover:border-neon-red/50 hover:bg-white/5 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,0,60,0.15)] transition-all duration-300 group flex flex-col items-center gap-2 w-full max-w-[200px] active:scale-95"
+              className="relative overflow-hidden glass px-8 py-4 rounded-2xl border border-white/10 backdrop-blur-xl hover:border-neon-red/50 hover:bg-white/5 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,0,60,0.15)] transition-all duration-300 group flex flex-col items-center gap-2 w-full max-w-[200px] active:scale-95"
             >
-              <span className="text-white font-display font-bold tracking-widest text-sm uppercase group-hover:text-neon-red transition-colors">View Credits</span>
-              <div className="h-px w-8 bg-neon-red/50 group-hover:w-16 group-hover:bg-neon-red transition-all duration-300" />
+              {/* Neon Beam Animation */}
+              <div className="absolute inset-0 pointer-events-none group-hover:opacity-100 opacity-0 transition-opacity duration-500">
+                <div 
+                  className="absolute inset-[-150%] animate-[spin_3s_linear_infinite] opacity-50 blur-xl"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent 0%, transparent 35%, #ff003c 50%, transparent 65%, transparent 100%)'
+                  }}
+                />
+                <div 
+                  className="absolute inset-[-100%] animate-[spin_3s_linear_infinite]"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent 0%, transparent 40%, #ff003c 50%, transparent 60%, transparent 100%)'
+                  }}
+                />
+                <div className="absolute inset-[1.5px] bg-zinc-950/90 rounded-[15px] z-0" />
+              </div>
+
+              <span className="text-white font-display font-bold tracking-widest text-sm uppercase group-hover:text-neon-red transition-colors relative z-10">Tap to see credits</span>
+              <div className="h-px w-8 bg-neon-red/50 group-hover:w-16 group-hover:bg-neon-red transition-all duration-300 relative z-10" />
             </Link>
           </div>
 

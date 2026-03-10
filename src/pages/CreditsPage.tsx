@@ -15,8 +15,8 @@ const CREDITS = [
         title: 'Prayan Media Team',
         members: [
             { name: 'Bharath Bhadran', role: 'Design', image: '/team/bharath.jpeg' },
-            { name: 'Abhijith Kumar', role: 'Content', image: '/team/abhijith.jpeg' },
-            { name: 'Albin Saju', role: 'Content', image: '/team/albin.jpeg' },
+            { name: 'Abhijith Kumar', role: 'Design', image: '/team/abhijith.jpeg' },
+            { name: 'Albin Saju', role: 'Design', image: '/team/albin.jpeg' },
         ],
     },
 ];

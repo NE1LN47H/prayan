@@ -170,9 +170,9 @@ export const Events = () => {
           <Reveal>
             <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
               <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
-                FEST <span className="text-neon-red">HIGHLIGHTS</span>
+                TECH <span className="text-neon-red">EVENTS</span>
               </h2>
-              <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Innovation & Excellence</p>
+              <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Enter The Grid</p>
             </div>
           </Reveal>
         </div>
