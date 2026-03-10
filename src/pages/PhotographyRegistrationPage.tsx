@@ -94,7 +94,7 @@ export default function PhotographyRegistrationPage() {
                                 <div className="flex items-center gap-4 py-2 px-6 rounded-2xl glass border border-white/5 group-hover:border-neon-red/30 transition-all duration-300">
                                     <span className="text-white text-lg font-display font-bold tracking-tight">Sreehari</span>
                                     <a
-                                        href="https://wa.me/+919747776684"
+                                        href="https://wa.me/+919746642101"
                                         className="px-4 py-1.5 rounded-xl text-[10px] font-mono tracking-widest uppercase bg-neon-red/10 text-neon-red border border-neon-red/20 hover:bg-neon-red hover:text-black transition-all duration-300"
                                     >
                                         Contact
