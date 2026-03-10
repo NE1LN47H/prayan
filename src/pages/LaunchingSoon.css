@@ -8,6 +8,7 @@
     overflow: hidden;
     height: 100vh;
     width: 100vw;
+    background: #ff0000;
 }
 
 .coming-soon {
@@ -23,129 +24,82 @@
 
 .coming-soon-inner {
     position: relative;
+    /* Fixed width to ensure desktop proportions */
+    width: 1200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .heading {
     font-size: 100px;
     text-transform: uppercase;
-    padding: 20px;
+    padding: 20px 40px;
     background: #000;
     color: #ff0000;
     transform: skewY(-10deg);
     font-weight: 500;
-    line-height: 100px;
+    line-height: 1.2;
     position: relative;
+    white-space: nowrap;
 }
 
 .small-heading {
     font-size: 30px;
     text-transform: uppercase;
     display: inline-block;
-    padding: 20px;
+    padding: 15px 30px;
     background: #000000;
     color: #ff0000;
     transform: skewY(-10deg);
     font-weight: 500;
-    line-height: 30px;
+    line-height: 1;
     box-shadow: 10px 10px 20px rgb(0 0 0 / .3);
     position: absolute;
-    right: 0;
-    bottom: -44px;
+    right: 15%;
+    bottom: -35px;
     z-index: 10;
+    white-space: nowrap;
 }
 
 .coming-soon-inner:before {
     content: "";
     height: 2px;
-    width: 60%;
+    width: 50%;
     background: #000;
     position: absolute;
-    top: -50px;
-    right: 0;
+    top: -60px;
+    right: 10%;
     transform: skewY(-10deg);
 }
 
 .coming-soon-inner:after {
     content: "";
     height: 2px;
-    width: 60%;
+    width: 50%;
     background: #fff;
     position: absolute;
-    bottom: -80px;
-    right: 0;
+    bottom: -90px;
+    right: 10%;
     transform: skewY(-10deg);
 }
 
 .heading:before {
     content: "";
     height: 2px;
-    width: 60%;
+    width: 50%;
     background: #000;
     position: absolute;
-    top: -50px;
-    left: 0;
+    top: -60px;
+    left: 10%;
 }
 
 .heading:after {
     content: "";
     height: 2px;
-    width: 60%;
+    width: 50%;
     background: #fff;
     position: absolute;
-    bottom: -120px;
-    left: 0;
-}
-
-@media only screen and (max-width: 400px) and (min-width: 200px) {
-    .heading {
-        font-size: 30px;
-        line-height: 40px;
-        text-transform: uppercase;
-        padding: 10px 20px;
-    }
-
-    .small-heading {
-        font-size: 20px;
-        padding: 10px;
-        bottom: -49px;
-    }
-
-    .coming-soon-inner:before {
-        top: -20px;
-    }
-
-    .heading:before {
-        top: -20px;
-    }
-
-    .heading:after {
-        bottom: -100px;
-    }
-}
-
-@media only screen and (max-width: 767px) and (min-width: 401px) {
-    .heading {
-        font-size: 40px;
-        line-height: 50px;
-        text-transform: uppercase;
-        padding: 10px 20px;
-    }
-
-    .small-heading {
-        font-size: 25px;
-        padding: 10px;
-        bottom: -48px;
-    }
-
-    .coming-soon-inner:before {
-        top: -30px;
-    }
-
-    .heading:before {
-        top: -30px;
-    }
-
-    .heading:after {
-        bottom: -100px;
-    }
+    bottom: -130px;
+    left: 10%;
 }
