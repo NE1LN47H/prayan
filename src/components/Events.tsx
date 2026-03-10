@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import SlidingCards, { CardContent } from './ui/SlidingCards';
 
-const EventCard = React.memo(({ title, description, color, image, registerLink }: any) => {
+const EventCard = React.memo(({ title, description, color, image, registerLink, comingSoon }: any) => {
   return (
     <div className="perspective-1000 group h-full">
       <div className={cn(
@@ -20,25 +20,31 @@ const EventCard = React.memo(({ title, description, color, image, registerLink }
         color === 'red' ? 'group-hover:border-neon-red' : 'group-hover:border-neon-purple'
       )}>
         {image && (
-          <div className="relative w-full aspect-[2/3] bg-black/40 overflow-hidden border-b border-white/5">
+          <div className="relative w-full flex-1 bg-black/40 overflow-hidden border-b border-white/5">
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
         )}
 
-        <div className="p-8 flex flex-col flex-1 gap-6">
+        <div className="p-8 flex flex-col gap-6">
           <div className="space-y-4">
             <h3 className="text-3xl font-display font-bold">{title}</h3>
-            <p className="text-white/50 leading-relaxed text-sm">{description}</p>
           </div>
 
           <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between gap-3">
             <span className="text-[10px] uppercase tracking-widest font-bold opacity-50">Learn More</span>
             <div className="flex items-center gap-3">
-              {registerLink && (
+              {comingSoon ? (
+                <div 
+                  className="flex items-center gap-2 text-[10px] px-4 py-2 rounded-full border border-white/20 text-white/40 font-bold tracking-widest uppercase cursor-default"
+                  style={{ fontFamily: "'Orbitron',sans-serif" }}
+                >
+                  Coming Soon
+                </div>
+              ) : registerLink && (
                 <Link
                   to={registerLink}
                   className="flex items-center gap-2 text-[10px] px-4 py-2 rounded-full bg-neon-red text-black font-bold tracking-widest uppercase hover:shadow-[0_0_20px_rgba(255,0,60,0.5)] transition-all duration-300 no-underline"
@@ -113,7 +119,9 @@ export const Events = () => {
       title: 'Mr & Mrs Prayan',
       description: 'The hunt for the ultimate duo. Showcase your charisma and teamwork.',
       color: 'purple',
+      image: '/posters/placeholder.webp',
       registerLink: '/register/mr-mrs-prayan',
+      comingSoon: true,
     },
   ];
 
@@ -122,19 +130,35 @@ export const Events = () => {
       title: 'LAYAM',
       description: 'Showcase your rhythm and energy in the most anticipated Inter-college Dance competition of the year.',
       color: 'red',
+      image: '/posters/placeholder.webp',
       registerLink: '/register/layam',
+      comingSoon: true,
     },
     {
       title: 'Estella',
       description: 'The personality contest where grace meets intelligence. Be the face of Prayan.',
       color: 'purple',
+      image: '/posters/placeholder.webp',
       registerLink: '/register/estella',
+      comingSoon: true,
     },
     {
       title: 'Quiz Competition',
       description: 'Test your knowledge across technology, culture, and more in our mega quiz.',
       color: 'blue',
+      image: '/posters/placeholder.webp',
       registerLink: '/register/quiz',
+      comingSoon: true,
+    },
+  ];
+  
+  const workshops = [
+    {
+      title: 'Agentic AI using n8n',
+      description: 'Build AI Agents and Autonomous Workflows using n8n and LLMs in this hands-on workshop.',
+      color: 'red',
+      image: '/workshops/syncify.jpeg',
+      registerLink: '/register/n8n-workshop',
     },
   ];
 
@@ -149,6 +173,7 @@ export const Events = () => {
   const onlineCardsData = formatCards(onlineEvents);
   const culturalCardsData = formatCards(culturalEvents);
   const stageCardsData = formatCards(stageEvents);
+  const workshopCardsData = formatCards(workshops);
 
   const DeckLabel = ({ text }: { text: string }) => (
     <div className="flex flex-col items-center mb-12">
@@ -197,6 +222,27 @@ export const Events = () => {
             <SlidingCards cards={stageCardsData} showSwipeLabel={false} />
           </div>
         </div>
+
+        {/* Workshops Section */}
+        <div id="workshops" className="space-y-12 md:space-y-16">
+          <Reveal>
+            <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
+                WORK<span className="text-neon-red">SHOPS</span>
+              </h2>
+              <p className="text-white/40 uppercase tracking-widest text-sm hidden md:block">Master the Future</p>
+            </div>
+          </Reveal>
+
+          <div className="flex flex-wrap justify-center gap-8">
+            {workshopCardsData.map((card) => (
+              <div key={card.id} className="w-full max-w-[360px] h-[520px]">
+                {card.content}
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* VKCET Venue */}
         <div id="venue" className="space-y-12 md:space-y-16">
           <div className="section-title flex items-end justify-between border-b border-white/10 pb-6 md:pb-8">

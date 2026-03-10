@@ -70,7 +70,7 @@ export const TornadoBackground = () => {
 
             // uniforms
             const emissiveColor = uniform(color('#ff003c')); // prayan neon-red
-            const timeScale = uniform(0.4);
+            const timeScale = uniform(0.2);
             const parabolStrength = uniform(1.2);
             const parabolOffset = uniform(0.3);
             const parabolAmplitude = uniform(0.2);

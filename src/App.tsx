@@ -19,6 +19,8 @@ import HotShotsRegistrationPage from './pages/HotShotsRegistrationPage';
 import PhotographyRegistrationPage from './pages/PhotographyRegistrationPage';
 import EFootballRegistrationPage from './pages/EFootballRegistrationPage';
 import FreeFireRegistrationPage from './pages/FreeFireRegistrationPage';
+import N8nWorkshopRegistrationPage from './pages/N8nWorkshopRegistrationPage';
+import ScrollToTop from './components/ScrollToTop';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -74,7 +76,9 @@ export default function App() {
   }, [isLoading]);
 
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       {/* /credits is a fully standalone page — no loading screen, no Lenis */}
       <Route path="/credits" element={<CreditsPage />} />
       <Route path="/register/layam" element={<LayamRegistrationPage />} />
@@ -82,6 +86,7 @@ export default function App() {
       <Route path="/register/photography" element={<PhotographyRegistrationPage />} />
       <Route path="/register/efootball" element={<EFootballRegistrationPage />} />
       <Route path="/register/free-fire" element={<FreeFireRegistrationPage />} />
+      <Route path="/register/n8n-workshop" element={<N8nWorkshopRegistrationPage />} />
 
       {/* Main site */}
       <Route path="*" element={
@@ -127,5 +132,6 @@ export default function App() {
         </main>
       } />
     </Routes>
+    </>
   );
 }

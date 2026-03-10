@@ -176,7 +176,6 @@ const SlidingCards: React.FC<SlidingCardsProps> = React.memo(({
                             </div>
                             <div className="space-y-4">
                                 <h3 className="text-3xl font-display font-bold text-white">{card.title}</h3>
-                                <p className="text-white/50 leading-relaxed text-sm">{card.description}</p>
                             </div>
                         </div>
                     )}

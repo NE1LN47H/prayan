@@ -8,15 +8,15 @@ const CREDITS = [
     {
         title: 'Developed By',
         members: [
-            { name: 'Neilnath P', role: null, image: '/team/neil.jpeg' },
+            { name: 'Neilnath P', role: null, image: '/team/neil.webp' },
         ],
     },
     {
         title: 'Prayan Media Team',
         members: [
-            { name: 'Bharath Bhadran', role: 'Design', image: '/team/bharath.jpeg' },
-            { name: 'Abhijith Kumar', role: 'Design', image: '/team/abhijith.jpeg' },
-            { name: 'Albin Saju', role: 'Design', image: '/team/albin.jpeg' },
+            { name: 'Bharath Bhadran', role: 'Design', image: '/team/bharath.webp' },
+            { name: 'Abhijith Kumar', role: 'Design', image: '/team/abhijith.webp' },
+            { name: 'Albin Saju', role: 'Design', image: '/team/albin.webp' },
         ],
     },
 ];
@@ -92,6 +92,8 @@ export default function CreditsPage() {
                                                         <img
                                                             src={m.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(m.name)}&background=ffffff&color=000000`}
                                                             alt={m.name}
+                                                            loading="lazy"
+                                                            decoding="async"
                                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                                         />
                                                     </div>
