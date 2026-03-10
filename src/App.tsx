@@ -20,7 +20,14 @@ import PhotographyRegistrationPage from './pages/PhotographyRegistrationPage';
 import EFootballRegistrationPage from './pages/EFootballRegistrationPage';
 import FreeFireRegistrationPage from './pages/FreeFireRegistrationPage';
 import N8nWorkshopRegistrationPage from './pages/N8nWorkshopRegistrationPage';
+import AabheriRegistrationPage from './pages/AabheriRegistrationPage';
 import ScrollToTop from './components/ScrollToTop';
+
+// Dynamic detection of LaunchingSoon page
+// If you delete src/pages/LaunchingSoon.tsx, the site will automatically fallback to the normal UI
+const launchingSoonModules = (import.meta as any).glob('./pages/LaunchingSoon.tsx', { eager: true });
+const LaunchingSoon = (launchingSoonModules['./pages/LaunchingSoon.tsx'] as any)?.default;
+const isLaunchingMode = !!LaunchingSoon;
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -87,51 +94,68 @@ export default function App() {
       <Route path="/register/efootball" element={<EFootballRegistrationPage />} />
       <Route path="/register/free-fire" element={<FreeFireRegistrationPage />} />
       <Route path="/register/n8n-workshop" element={<N8nWorkshopRegistrationPage />} />
+      <Route path="/register/aabheri" element={<AabheriRegistrationPage />} />
+      {isLaunchingMode && (
+        <Route path="/launch-soon" element={<LaunchingSoon />} />
+      )}
+      
+      {/* 
+          AUTOMATIC LANDING PAGE 
+          If src/pages/LaunchingSoon.tsx exists, it will be the landing page.
+          If you delete that file, the site automatically reverts to the normal UI.
+      */}
+      <Route path="/" element={isLaunchingMode ? <LaunchingSoon /> : <MainSiteContent isLoading={isLoading} />} />
 
-      {/* Main site */}
-      <Route path="*" element={
-        <main className="relative bg-black min-h-screen">
-          <AnimatePresence mode="wait">
-            {isLoading ? (
-              <LoadingScreen key="loader" />
-            ) : (
-              <motion.div
-                key="content"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-                className="relative"
-              >
-                <Navbar />
-                <CustomCursor />
-                <ParallaxHero />
-                <Hero />
-                <div className="relative">
-                  <div className="relative z-10 w-full">
-                    <About />
-                    <section className="py-20 px-6 relative overflow-hidden">
-                      <div className="max-w-7xl mx-auto space-y-12 relative z-10">
-                        <div className="text-center space-y-4">
-                          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
-                            FEST <span className="text-neon-red">HIGHLIGHTS</span>
-                          </h2>
-                          <p className="text-white/40 uppercase tracking-widest text-sm">Experience the Future</p>
-                        </div>
-                        <ImageTube3D />
-                      </div>
-                    </section>
-                    <Events />
-                    <Sponsors />
-                    <Timeline />
-                    <Footer />
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </main>
-      } />
+      {/* Backdoor to see the real site while LaunchingSoon is active */}
+      <Route path="/home" element={<MainSiteContent isLoading={isLoading} />} />
+
+      {/* Main site fallback for all other routes */}
+      <Route path="*" element={<MainSiteContent isLoading={isLoading} />} />
     </Routes>
     </>
   );
 }
+
+// Extracted Main Site Content for cleaner routing
+const MainSiteContent = ({ isLoading }: { isLoading: boolean }) => (
+  <main className="relative bg-black min-h-screen">
+    <AnimatePresence mode="wait">
+      {isLoading ? (
+        <LoadingScreen key="loader" />
+      ) : (
+        <motion.div
+          key="content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="relative"
+        >
+          <Navbar />
+          <CustomCursor />
+          <ParallaxHero />
+          <Hero />
+          <div className="relative">
+            <div className="relative z-10 w-full">
+              <About />
+              <section className="py-20 px-6 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto space-y-12 relative z-10">
+                  <div className="text-center space-y-4">
+                    <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
+                      FEST <span className="text-neon-red">HIGHLIGHTS</span>
+                    </h2>
+                    <p className="text-white/40 uppercase tracking-widest text-sm">Experience the Future</p>
+                  </div>
+                  <ImageTube3D />
+                </div>
+              </section>
+              <Events />
+              <Sponsors />
+              <Timeline />
+              <Footer />
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </main>
+);
