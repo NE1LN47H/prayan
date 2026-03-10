@@ -103,41 +103,41 @@ export const Hero = () => {
       tl
         .to('.hero-step-3', {
           opacity: 1, y: 0, filter: 'blur(0px)',
-          duration: 0.5, ease: 'power2.out',
+          duration: 0.35, ease: 'power2.out',
         })
         .to('.beam-line', {
-          scaleX: 1, duration: 0.4, ease: 'power4.inOut',
-        }, '+=0.05')
-        .to('.beam-top', { top: '0%', duration: 0.5, ease: 'expo.inOut' }, '+=0.02')
-        .to('.beam-bot', { top: '100%', duration: 0.5, ease: 'expo.inOut' }, '<')
+          scaleX: 1, duration: 0.3, ease: 'power4.inOut',
+        }, '+=0.02')
+        .to('.beam-top', { top: '0%', duration: 0.35, ease: 'expo.inOut' }, '+=0.01')
+        .to('.beam-bot', { top: '100%', duration: 0.35, ease: 'expo.inOut' }, '<')
         .to('.ares-text', {
           clipPath: 'inset(0% 0 0% 0)', opacity: 1,
-          duration: 0.5, ease: 'expo.inOut',
+          duration: 0.35, ease: 'expo.inOut',
         }, '<')
         .to('.laser-scan', {
-          opacity: 1, left: '100%', duration: 0.7, ease: 'power2.inOut',
+          opacity: 1, left: '100%', duration: 0.5, ease: 'power2.inOut',
         }, '<')
-        .to('.laser-scan', { opacity: 0, duration: 0.2 }, '>')
-        .to('.ares-text', { filter: 'brightness(1) contrast(1)', duration: 0.15 })
+        .to('.laser-scan', { opacity: 0, duration: 0.15 }, '>')
+        .to('.ares-text', { filter: 'brightness(1) contrast(1)', duration: 0.1 })
         .to('.ares-text', {
-          opacity: 0.4, duration: 0.05, repeat: 3, yoyo: true, ease: 'none',
+          opacity: 0.4, duration: 0.04, repeat: 3, yoyo: true, ease: 'none',
         })
-        .to('.ares-text', { opacity: 1, duration: 0.1 })
-        .to('.beam-line', { opacity: 0, duration: 0.2, ease: 'power2.out' }, '-=0.1')
+        .to('.ares-text', { opacity: 1, duration: 0.08 })
+        .to('.beam-line', { opacity: 0, duration: 0.15, ease: 'power2.out' }, '-=0.08')
 
         // Countdown fades in right after title settles
         .to('.hero-countdown', {
           opacity: 1, y: 0, filter: 'blur(0px)',
-          duration: 0.5, ease: 'power3.out',
-        }, '+=0.05')
+          duration: 0.35, ease: 'power3.out',
+        }, '+=0.02')
         .to('.hero-subtitle', {
           opacity: 1, y: 0, filter: 'blur(0px)',
-          duration: 0.4, ease: 'power3.out',
-        }, '+=0.05')
+          duration: 0.3, ease: 'power3.out',
+        }, '+=0.02')
         .to('.hero-cta', {
           opacity: 1, y: 0, filter: 'blur(0px)',
-          duration: 0.4, ease: 'power3.out',
-        }, '-=0.2');
+          duration: 0.3, ease: 'power3.out',
+        }, '-=0.15');
     };
 
     const st = ScrollTrigger.create({

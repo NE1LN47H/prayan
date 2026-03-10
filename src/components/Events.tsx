@@ -110,12 +110,6 @@ export const Events = () => {
 
   const culturalEvents = [
     {
-      title: 'Estella',
-      description: 'The personality contest where grace meets intelligence. Be the face of Prayan.',
-      color: 'purple',
-      registerLink: '/register/estella',
-    },
-    {
       title: 'Mr & Mrs Prayan',
       description: 'The hunt for the ultimate duo. Showcase your charisma and teamwork.',
       color: 'purple',
@@ -129,6 +123,12 @@ export const Events = () => {
       description: 'Showcase your rhythm and energy in the most anticipated Inter-college Dance competition of the year.',
       color: 'red',
       registerLink: '/register/layam',
+    },
+    {
+      title: 'Estella',
+      description: 'The personality contest where grace meets intelligence. Be the face of Prayan.',
+      color: 'purple',
+      registerLink: '/register/estella',
     },
     {
       title: 'Quiz Competition',

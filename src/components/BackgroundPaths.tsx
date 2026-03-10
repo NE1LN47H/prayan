@@ -15,7 +15,7 @@ function FloatingPaths({ position, opacity = 0.3 }: { position: number; opacity?
                     } ${875 - i * 18} ${684 - i * 15 * position} ${875 - i * 18}`,
                 width: 0.5 + i * 0.08,
                 opacity: 0.1 + i * 0.08,
-                duration: 20 + (i % 5) * 1.5,
+                duration: 12 + (i % 5) * 1,
             })),
         [position],
     )
