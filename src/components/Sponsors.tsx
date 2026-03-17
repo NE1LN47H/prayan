@@ -16,24 +16,6 @@ const SPONSORS_DATA = [
   { name: 'Sponsors', logo: null },
 ];
 
-const SPONSORS_DATA = [
-  { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg' },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-];
-
-const SPONSORS_DATA = [
-  { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg' },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-];
-
 export const Sponsors = () => {
   return (
     <section id="sponsors" className="py-20 md:py-32 px-6">
