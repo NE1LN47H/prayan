@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 /* -------------------- SPONSORS DATA -------------------- */
 const SPONSORS_DATA = [
-  { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg' },
+  { name: 'Mafatlal', logo: '/sponsors/mafatlal.png' },
   { name: 'Sponsors', logo: null },
   { name: 'Sponsors', logo: null },
   { name: 'Sponsors', logo: null },
@@ -12,10 +12,22 @@ const SPONSORS_DATA = [
   { name: 'Sponsors', logo: null },
 ];
 
+const titleBadgeStyles = `
+  @keyframes titleShine {
+    0% { transform: translateX(-100%) skewX(-20deg); }
+    60%, 100% { transform: translateX(200%) skewX(-20deg); }
+  }
+  @keyframes titleGold {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+`;
+
 /* -------------------- SPONSORS -------------------- */
 export const Sponsors = () => {
   return (
     <section id="sponsors" className="py-20 md:py-32 px-6">
+      <style dangerouslySetInnerHTML={{ __html: titleBadgeStyles }} />
       <div className="max-w-7xl mx-auto space-y-16 md:space-y-20">
 
         {/* Heading */}
@@ -28,23 +40,20 @@ export const Sponsors = () => {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {SPONSORS_DATA.map((sponsor, i) => (
             <div
               key={i}
-              className={`glass rounded-2xl h-28 p-6 flex items-center justify-center transition-all duration-500 group border border-white/10 hover:border-neon-red hover:shadow-[0_0_20px_rgba(255,0,60,0.25)] ${
-                sponsor.logo ? 'grayscale hover:grayscale-0' : 'opacity-20'
-              }`}
+              className={`sponsor-logo glass p-8 rounded-2xl flex items-center justify-center transition-all duration-500 group border border-white/5 hover:border-neon-red ${sponsor.logo ? 'grayscale-0' : 'opacity-20'
+                }`}
             >
               {sponsor.logo ? (
-                <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="max-h-full max-w-full object-contain transition-all duration-300 group-hover:scale-110"
-                  />
-                </div>
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="max-h-16 w-auto opacity-100 group-hover:scale-105 transition-all duration-300"
+                  referrerPolicy="no-referrer"
+                />
               ) : (
                 <span className="text-white/20 font-display font-bold tracking-widest text-xs uppercase italic">
                   {sponsor.name}
@@ -103,80 +112,31 @@ export const Footer = () => {
               to="/credits"
               className="glass px-8 py-4 rounded-2xl border border-white/10 hover:border-neon-red hover:scale-105 hover:shadow-[0_0_20px_rgba(255,0,60,0.2)] transition-all duration-300 flex flex-col items-center gap-2 w-full max-w-[200px]"
             >
-              <span className="text-white font-display font-bold text-sm uppercase">
-                Tap to see credits
-              </span>
-              <div className="h-px w-8 bg-neon-red group-hover:w-16 transition-all duration-300" />
-            </Link>
-          </div>
-
-          {/* Coordinators */}
-          <div className="space-y-6">
-            <h4 className="font-display font-bold text-xl">TECH COORDINATORS</h4>
-
-            <ul className="space-y-6 text-white/50">
-              <li className="flex flex-col gap-1">
-                <span className="text-neon-red text-xs uppercase tracking-widest">
-                  Student Coordinator
-                </span>
-                <span className="text-white text-lg font-semibold">
-                  ALAN AR
-                </span>
-              </li>
-
-              <li className="flex flex-col gap-1">
-                <span className="text-neon-red text-xs uppercase tracking-widest">
-                  Faculty Coordinator
-                </span>
-                <span className="text-white text-lg font-semibold">
-                  VAISHAKAN B
-                </span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        {/* Bottom */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm">
-          <p>© 2026 PRAYAN VKCET. All rights reserved.</p>
-
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-        </div>
-
-      </div>
-    </footer>
-  );
-};
-        {/* Bottom */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm">
-          <p>© 2026 PRAYAN VKCET. All rights reserved.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};                  className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] opacity-70"
+              {/* Neon Beam Animation - Always Visible */}
+              <div className="absolute inset-0 pointer-events-none transition-opacity duration-500">
+                <div
+                  className="absolute inset-[-150%] animate-[spin_3s_linear_infinite] opacity-40 blur-xl"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent 0%, transparent 35%, #ff003c 50%, transparent 65%, transparent 100%)'
+                  }}
+                />
+                <div
+                  className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] opacity-70"
                   style={{
                     background: 'conic-gradient(from 0deg, transparent 0%, transparent 40%, #ff003c 50%, transparent 60%, transparent 100%)'
                   }}
                 />
                 <div className="absolute inset-[1.5px] bg-zinc-950/90 rounded-[15px] z-0" />
-                
+
                 {/* Glass Shine Effect */}
-                <div 
+                <div
                   className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/[0.1] to-transparent -translate-x-full animate-[shine_3s_infinite_ease-in-out] pointer-events-none"
                   style={{ animationDelay: '1s' }}
                 />
               </div>
 
-              <style dangerouslySetInnerHTML={{ __html: `
+              <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes shine {
                   0% { transform: translateX(-100%) skewX(-15deg); }
                   50%, 100% { transform: translateX(100%) skewX(-15deg); }
