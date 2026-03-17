@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 /* -------------------- SPONSORS DATA -------------------- */
 const SPONSORS_DATA = [
-  { name: 'Mafatlal', logo: '/sponsors/mafatlal.png' },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
-  { name: 'Sponsors', logo: null },
+  { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg', caption: 'Title Sponsor', size: 'lg' },
+  { name: 'Sonetec', logo: '/sponsors/sonetec.png', caption: null, size: 'md' },
+  { name: 'Sponsors', logo: null, caption: null, size: 'md' },
+  { name: 'Sponsors', logo: null, caption: null, size: 'md' },
+  { name: 'Sponsors', logo: null, caption: null, size: 'md' },
+  { name: 'Sponsors', logo: null, caption: null, size: 'md' },
 ];
 
 const titleBadgeStyles = `
@@ -40,25 +40,55 @@ export const Sponsors = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {SPONSORS_DATA.map((sponsor, i) => (
-            <div
-              key={i}
-              className={`sponsor-logo glass p-8 rounded-2xl flex items-center justify-center transition-all duration-500 group border border-white/5 hover:border-neon-red ${sponsor.logo ? 'grayscale-0' : 'opacity-20'
+            <div key={i} className="flex flex-col items-center gap-2">
+
+              {/* Card — border hugs the image */}
+              <div
+                className={`sponsor-logo glass rounded-2xl inline-flex items-center justify-center transition-all duration-500 group border border-white/5 hover:border-neon-red overflow-hidden ${
+                  sponsor.logo ? '' : 'opacity-20 p-8 w-40 h-32'
                 }`}
-            >
-              {sponsor.logo ? (
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  className="max-h-16 w-auto opacity-100 group-hover:scale-105 transition-all duration-300"
-                  referrerPolicy="no-referrer"
-                />
-              ) : (
-                <span className="text-white/20 font-display font-bold tracking-widest text-xs uppercase italic">
-                  {sponsor.name}
-                </span>
+              >
+                {sponsor.logo ? (
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className={`block w-auto group-hover:scale-105 transition-all duration-300 ${
+                      sponsor.size === 'lg' ? 'max-h-56' : 'max-h-40'
+                    }`}
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <span className="text-white/20 font-display font-bold tracking-widest text-xs uppercase italic">
+                    {sponsor.name}
+                  </span>
+                )}
+              </div>
+
+              {/* Caption badge */}
+              {sponsor.caption && (
+                <div className="relative inline-flex items-center justify-center mt-1">
+                  <span className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-950 overflow-hidden border border-neon-red/50">
+                    {/* Sweep shine */}
+                    <span className="absolute inset-0 -translate-x-full animate-[titleShine_2.5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-neon-red animate-pulse relative z-10" />
+                    <span
+                      className="relative z-10 text-[11px] font-black uppercase tracking-[0.25em]"
+                      style={{
+                        background: 'linear-gradient(90deg, #ff003c 0%, #ffd700 50%, #ff003c 100%)',
+                        backgroundSize: '200% auto',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        animation: 'titleGold 2.5s linear infinite'
+                      }}
+                    >
+                      {sponsor.caption}
+                    </span>
+                  </span>
+                </div>
               )}
+
             </div>
           ))}
         </div>
