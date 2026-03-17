@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 gsap.registerPlugin(ScrollTrigger);
 
 const SPONSORS_DATA = [
-  { name: 'Mafatlal', logo: '/sponsors/mafatlal.png' },
+  { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg' },
   { name: 'Sponsors', logo: null },
   { name: 'Sponsors', logo: null },
   { name: 'Sponsors', logo: null },
