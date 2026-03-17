@@ -1,11 +1,6 @@
-import React, { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
 import { Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const SPONSORS_DATA = [
   { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg' },
@@ -36,7 +31,7 @@ export const Sponsors = () => {
           {SPONSORS_DATA.map((sponsor, i) => (
             <div
               key={i}
-              className={`glass rounded-2xl p-6 flex items-center justify-center h-28 transition-all duration-500 group border border-white/10 hover:border-neon-red hover:shadow-[0_0_20px_rgba(255,0,60,0.2)] ${
+              className={`glass rounded-2xl h-28 p-6 flex items-center justify-center transition-all duration-500 group border border-white/10 hover:border-neon-red hover:shadow-[0_0_20px_rgba(255,0,60,0.25)] ${
                 sponsor.logo ? 'grayscale hover:grayscale-0' : 'opacity-20'
               }`}
             >
@@ -45,8 +40,7 @@ export const Sponsors = () => {
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    className="max-h-12 max-w-full object-contain mx-auto transition-all duration-300 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
+                    className="max-h-full max-w-full object-contain transition-all duration-300 group-hover:scale-110"
                   />
                 </div>
               ) : (
@@ -68,6 +62,8 @@ export const Footer = () => {
     <footer id="contact" className="pt-32 pb-10 px-6 border-t border-white/5 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-16 mb-20 items-start">
+          
+          {/* Logo + About */}
           <div className="space-y-8">
             <div className="flex items-center gap-3">
               <img
@@ -79,10 +75,12 @@ export const Footer = () => {
                 PRAYAN<span className="text-neon-red">'26</span>
               </span>
             </div>
+
             <p className="text-white/50 text-lg max-w-sm">
               The ultimate techno-cultural experience. Join us for two days of innovation,
               creativity, and unforgettable memories at VKCET.
             </p>
+
             <div className="flex gap-4">
               <a
                 href="https://instagram.com/prayan_vke"
@@ -95,21 +93,67 @@ export const Footer = () => {
             </div>
           </div>
 
+          {/* Credits Button */}
           <div className="space-y-6 md:pl-8">
             <Link
               to="/credits"
               className="relative overflow-hidden glass px-8 py-4 rounded-2xl border border-white/10 backdrop-blur-xl hover:border-neon-red/50 hover:bg-white/5 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,0,60,0.15)] transition-all duration-300 group flex flex-col items-center gap-2 w-full max-w-[200px] active:scale-95"
             >
-              {/* Neon Beam Animation - Always Visible */}
-              <div className="absolute inset-0 pointer-events-none transition-opacity duration-500">
+              <div className="absolute inset-0 pointer-events-none">
                 <div 
                   className="absolute inset-[-150%] animate-[spin_3s_linear_infinite] opacity-40 blur-xl"
                   style={{
-                    background: 'conic-gradient(from 0deg, transparent 0%, transparent 35%, #ff003c 50%, transparent 65%, transparent 100%)'
+                    background: 'conic-gradient(from 0deg, transparent 35%, #ff003c 50%, transparent 65%)'
                   }}
                 />
-                <div 
-                  className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] opacity-70"
+                <div className="absolute inset-[1.5px] bg-zinc-950/90 rounded-[15px]" />
+              </div>
+
+              <span className="text-white font-display font-bold tracking-widest text-sm uppercase group-hover:text-neon-red transition-colors relative z-10">
+                Tap to see credits
+              </span>
+
+              <div className="h-px w-8 bg-neon-red/50 group-hover:w-16 group-hover:bg-neon-red transition-all duration-300 relative z-10" />
+            </Link>
+          </div>
+
+          {/* Coordinators */}
+          <div className="space-y-6">
+            <h4 className="font-display font-bold text-xl">TECH COORDINATORS</h4>
+            <ul className="space-y-6 text-white/50">
+              <li className="flex flex-col gap-1">
+                <span className="text-neon-red text-[10px] uppercase tracking-[0.2em] font-bold">
+                  Student Coordinator
+                </span>
+                <span className="text-white text-lg font-display font-semibold">
+                  ALAN AR
+                </span>
+              </li>
+
+              <li className="flex flex-col gap-1">
+                <span className="text-neon-red text-[10px] uppercase tracking-[0.2em] font-bold">
+                  Faculty Coordinator
+                </span>
+                <span className="text-white text-lg font-display font-semibold">
+                  VAISHAKAN B
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm">
+          <p>© 2026 PRAYAN VKCET. All rights reserved.</p>
+          <div className="flex gap-8">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};                  className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] opacity-70"
                   style={{
                     background: 'conic-gradient(from 0deg, transparent 0%, transparent 40%, #ff003c 50%, transparent 60%, transparent 100%)'
                   }}
