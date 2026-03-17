@@ -16,31 +16,48 @@ const SPONSORS_DATA = [
   { name: 'Sponsors', logo: null },
 ];
 
+const SPONSORS_DATA = [
+  { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg' },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+  { name: 'Sponsors', logo: null },
+];
+
 export const Sponsors = () => {
   return (
     <section id="sponsors" className="py-20 md:py-32 px-6">
       <div className="max-w-7xl mx-auto space-y-16 md:space-y-20">
+        
+        {/* Heading */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tighter">
             OUR <span className="text-neon-red">SPONSORS</span>
           </h2>
-          <p className="text-white/40 uppercase tracking-widest text-sm">Empowering the Vision</p>
+          <p className="text-white/40 uppercase tracking-widest text-sm">
+            Empowering the Vision
+          </p>
         </div>
 
+        {/* Sponsors Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {SPONSORS_DATA.map((sponsor, i) => (
             <div
               key={i}
-              className={`sponsor-logo glass p-8 rounded-2xl flex items-center justify-center transition-all duration-500 group border border-white/5 hover:border-neon-red ${sponsor.logo ? 'grayscale-0' : 'opacity-20'
-                }`}
+              className={`glass rounded-2xl p-6 flex items-center justify-center h-28 transition-all duration-500 group border border-white/10 hover:border-neon-red hover:shadow-[0_0_20px_rgba(255,0,60,0.2)] ${
+                sponsor.logo ? 'grayscale hover:grayscale-0' : 'opacity-20'
+              }`}
             >
               {sponsor.logo ? (
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  className="max-h-16 w-auto opacity-100 group-hover:scale-105 transition-all duration-300"
-                  referrerPolicy="no-referrer"
-                />
+                <div className="w-full h-full flex items-center justify-center">
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="max-h-12 max-w-full object-contain mx-auto transition-all duration-300 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
               ) : (
                 <span className="text-white/20 font-display font-bold tracking-widest text-xs uppercase italic">
                   {sponsor.name}
@@ -49,6 +66,7 @@ export const Sponsors = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
