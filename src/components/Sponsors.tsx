@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 /* -------------------- SPONSORS DATA -------------------- */
 const SPONSORS_DATA = [
   { name: 'Mafatlal', logo: '/sponsors/mafatlal.jpg', caption: 'Title Sponsor', size: 'lg' },
-  { name: 'Sonetec', logo: '/sponsors/sonetec.png', caption: null, size: 'md' },
+  { name: 'Sonetec', logo: null, caption: null, size: 'md' },
   { name: 'Sponsors', logo: null, caption: null, size: 'md' },
   { name: 'Sponsors', logo: null, caption: null, size: 'md' },
   { name: 'Sponsors', logo: null, caption: null, size: 'md' },
@@ -46,17 +46,15 @@ export const Sponsors = () => {
 
               {/* Card — border hugs the image */}
               <div
-                className={`sponsor-logo glass rounded-2xl inline-flex items-center justify-center transition-all duration-500 group border border-white/5 hover:border-neon-red overflow-hidden ${
-                  sponsor.logo ? '' : 'opacity-20 p-8 w-40 h-32'
-                }`}
+                className={`sponsor-logo glass rounded-2xl inline-flex items-center justify-center transition-all duration-500 group border border-white/5 hover:border-neon-red overflow-hidden ${sponsor.logo ? '' : 'opacity-20 p-8 w-40 h-32'
+                  }`}
               >
                 {sponsor.logo ? (
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    className={`block w-auto group-hover:scale-105 transition-all duration-300 ${
-                      sponsor.size === 'lg' ? 'max-h-56' : 'max-h-40'
-                    }`}
+                    className={`block w-auto group-hover:scale-105 transition-all duration-300 ${sponsor.size === 'lg' ? 'max-h-56' : 'max-h-40'
+                      }`}
                     referrerPolicy="no-referrer"
                   />
                 ) : (
